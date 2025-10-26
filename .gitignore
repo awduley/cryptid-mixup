@@ -1,4 +1,4 @@
-# Logs
+# Logs (you already have these)
 logs
 *.log
 npm-debug.log*
@@ -7,12 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies / builds
 node_modules
 dist
 dist-ssr
-*.local
 
-# Editor directories and files
+# Local machine & editor
+*.local
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,3 +23,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
+
+# Env files (don’t commit secrets)
+.env
+.env.*
+!.env.example        # keep a sample env file in repo
+
+# Test & tooling caches (optional but nice)
+coverage/
+.eslintcache
+.stylelintcache
+
+# Hosting/CI (only if you use them)
+.vercel/
+.netlify/
+
+# E2E artifacts (only if you use Cypress/Playwright)
+cypress/videos/
+cypress/screenshots/
+playwright-report/

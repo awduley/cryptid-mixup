@@ -22,6 +22,10 @@ body {
   font-size: 1.6rem;
   background: $color-bg-dark;
   color: $color-text-light;
+
+  p {
+    line-height: 1.5;
+  }
 }
 
 #header,

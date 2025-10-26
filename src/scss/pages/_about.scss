@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.about {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: 2rem;
+
+  header {
+    margin-block-end: 2rem;
+  }
+
+  h1, 
+  h2 {
+    margin-block-end: 2rem;
+  }
+
+  details {
+    margin-block: 1rem 2rem;
+
+    div {
+      margin-block: 2rem;
+    }
+
+    p,
+    ul,
+    ul li {
+      margin-block: 1rem;
+    }
+    
+    p {
+      line-height: 1.5rem;
+    }
+  }
+
+  footer {
+    margin-block: 2rem;
+  }
+}

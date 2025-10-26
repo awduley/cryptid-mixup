@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom';
 
 function Header() {
 
@@ -55,10 +56,10 @@ function Header() {
             <h3 className="hero__tagline">Search the Unknown</h3>
           </div>
         </div>
-        <nav className="hero__nav">
+        <nav className="hero__nav" aria-label="Main">
           <ul className="flex-center">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+            <NavLink to="/" end>Home</NavLink>
+            <NavLink to="/about">About</NavLink>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/bestiary">Bestiary</a></li>
             <li><a href="/crypt">The Crypt</a></li>
