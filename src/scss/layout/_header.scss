@@ -1,0 +1,264 @@
+@use "../abstracts" as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: $color-text-light;
+  min-height: clamp(16rem, 41.7vw, 22rem);
+  border-bottom: 1px solid $color-border;
+
+  // background: linear-gradient(to bottom, rgba($color-bg-dark, .15), rgba($color-bg-dark, .65)),
+  // url('') center bottom, center bottom no-repeat;
+  // background-size: cover, cover;
+  // background-position: center bottom, center bottom;
+  // background-repeat: no-repeat;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+  }
+
+  &__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events:none;
+    background-image:
+      linear-gradient(to bottom, rgba($color-bg-dark, .15), rgba($color-bg-dark, .65)),
+      linear-gradient(rgba($color-neon-purple, .10), rgba($color-neon-purple, 0));
+    background-blend-mode: normal, multiply;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: initial;
+    text-align: center;
+    gap: 1rem;
+    max-width: 72rem;
+    margin-inline: auto;
+    // padding: 1rem 1.6rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__brand {
+    display: grid;
+    place-items: center;
+    gap: .5rem;
+    text-align: center;
+    margin: 0;
+
+    .hero__logo-img {
+      width: 100%;
+      max-width: 20rem;
+      height: auto;
+    }
+
+    .hero__tagline {
+      font-size: 1.4rem;
+      font-family: "Roboto", sans-serif;
+      margin: 1rem 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-text-muted;
+
+    &--extended {
+      display: none;
+    }
+  }
+
+  &__nav {
+    gap: 1rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 1rem;
+      margin: 0;
+    }
+  }
+
+  &__cta {
+    border: 1px solid $color-neon-green;
+    border-radius: .5rem;
+    color: $color-text-light;
+    text-decoration: none;
+    transition: background-color .2s ease, box-shadow .2s ease;
+
+    &:hover {
+      background-color: rgba($color-neon-green, .08);
+      box-shadow: 0 0 .8rem rgba($color-neon-green, .35);
+    }
+  }
+
+  &__fog {
+    position: absolute;
+    inset: -12% -20%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    filter: blur(1.8rem) saturate(110%);
+    will-change: transform;
+    z-index: 1;
+
+    // organic wisps made from radial gradients
+    background:
+      radial-gradient(45% 40% at 22% 35%, rgba($color-fog,.16), transparent 60%),
+      radial-gradient(40% 35% at 70% 55%, rgba($color-fog,.12), transparent 62%),
+      radial-gradient(35% 30% at 40% 75%, rgba($color-fog,.10), transparent 60%);
+    background-repeat: no-repeat;
+  }
+
+  &__fog--near {
+    opacity: .32;
+    animation: fog-drift-near 120s linear infinite;
+  }
+
+  &__fog--far {
+    opacity: .20;
+    animation: fog-drift-far 180s linear infinite;
+  }
+}
+
+@keyframes fog-drift-near {
+  0%   { transform: translate3d(0, 0, 0) scale(1.05); }
+  50%  { transform: translate3d(-4rem, -.5rem, 0) scale(1.06); }
+  100% { transform: translate3d(0, 0, 0) scale(1.05); }
+}
+
+@keyframes fog-drift-far {
+  0%   { transform: translate3d(0, 0, 0) scale(1.08); }
+  50%  { transform: translate3d(3rem, .6rem, 0)  scale(1.07); }
+  100% { transform: translate3d(0, 0, 0) scale(1.08); }
+}
+
+/* responsive height bumps (your simple vars) */
+// @media (min-width: $bp-lg) { min-height: 28rem; }
+// @media (min-width: $bp-xl) { min-height: 34rem; }
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero__fog { animation: none; } 
+}
+
+// Media queries
+@media (min-width: $bp-md) {
+  .hero__inner {
+    justify-content: space-between;  /* now it’s a row, so this spreads left/right */
+    text-align: left;
+  }
+
+  .hero__brand { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+
+    .hero__logo-img {
+      max-width: 10rem;
+    }
+  }
+
+  .hero__nav { 
+    flex: 0 1 auto; 
+    align-items: flex-end;
+    margin: 4rem 0 0;
+  }
+
+  .hero__nav ul {
+    display: flex;
+    flex-wrap: wrap;                  /* allow a 2nd row at mid widths */
+    justify-content: flex-end;
+    gap: clamp(.5rem, 1.6vw, 1.2rem);
+    margin: 0; padding: 0; list-style: none;
+  }
+
+  .hero__nav a { 
+    white-space: nowrap; 
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .hero__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1rem, 2vh, 1.6rem);
+  }
+
+  .hero__brand {
+    min-width: 0;
+
+    .hero__logo-img {
+      max-width: 10rem;
+      height: auto;
+    }
+
+    .hero__title {
+      font-size: 2.2rem;
+    }
+
+    .hero__tagline {
+      font-size: 1.4rem;
+      font-family: "Roboto", sans-serif;
+      margin: 1rem 0;
+    }
+  }
+
+  .hero__nav {
+    flex: 0 1 auto;
+    margin: 0;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: clamp(.5rem, 1.6vw, 1.2rem);
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      white-space: nowrap;
+    }
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .hero__inner {
+    max-width: 92rem;
+  }
+
+  .hero__brand {
+
+    .hero__logo-img {
+      
+    }
+
+    .hero__title {
+      font-size: 3rem;
+    }
+
+    .hero__tagline {
+      font-size: 1.4rem;
+      font-family: "Roboto", sans-serif;
+      margin: 1rem 0;
+    }
+  }
+}

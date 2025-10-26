@@ -1,0 +1,28 @@
+// Core background + text
+$color-bg-dark:    #0d0d0d;  // almost black
+$color-bg-light:   #1a1a1a;  // dark gray, good for cards/sections
+$color-text-light: #f5f5f5;  // off-white for readability
+$color-text-muted: #cccccc;  // subtle/secondary text
+
+// Forest tones
+$color-forest-deep: #1b4332; // deep evergreen
+$color-forest-moss: #95d5b2; // soft mossy green
+
+// Magical neon accents
+$color-neon-green: #55ff99;  // eerie glow
+$color-neon-blue:  #3ee7f7;  // mysterious cool tone
+$color-neon-purple:#9d4edd;  // playful mystical pop
+
+// Utility colors (optional)
+$color-accent-warm: #ff7b54; // warm contrast for buttons/alerts
+$color-border:      #2e2e2e; // subtle border lines
+
+// Footer overlay colors
+$color-fog: #f3f3f3;
+
+// Bootstrap breakpoints that I like to use
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;

@@ -1,0 +1,95 @@
+@use '../abstracts' as *;
+
+.posts {
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+  border-bottom: 1px solid $color-border;
+
+  // .posts__inner {
+  //   max-width: 72rem;
+  //   margin-inline: auto;
+  //   padding-inline: clamp(1rem, 4vw, 2rem);
+  // }
+
+  h2 { 
+    margin: 0 0 1rem; 
+    font-size: clamp(1.3rem, 2.8vw, 1.8rem); 
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;                          // mobile
+    gap: clamp(1rem, 3vw, 1.8rem);
+  }
+
+  .post-card {
+    display: grid; 
+    gap: .5rem;
+    background: rgba($color-bg-light, .6);
+    border: 1px solid $color-border;
+    border-radius: .6rem;
+    overflow: clip;
+    transition: box-shadow .2s ease, transform .2s ease;
+
+    &:hover { 
+      box-shadow: 0 0 .9rem rgba($color-neon-green,.25); 
+      transform: translateY(-1px); 
+    }
+
+    &__media img { 
+      width: 100%; 
+      height: auto; 
+      display: block; 
+      aspect-ratio: 16/9; 
+      object-fit: cover; 
+    }
+
+    &__meta {
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: .5rem .6rem;
+      color: $color-text-muted;
+      font-size: .9rem;
+      padding: .6rem 1rem 0;
+    }
+
+    &__cat {
+      border: 1px solid rgba($color-text-light,.25);
+      border-radius: .6rem; 
+      padding: .1rem .5rem; 
+      font-size: .8rem;
+    }
+
+    &__title { 
+      margin-block: .4rem; 
+      padding: 0 1rem; 
+      font-size: clamp(1rem, 2.4vw, 1.25rem); 
+    }
+
+    &__excerpt { 
+      padding: 0 1rem .5rem; 
+      color: $color-text-muted; 
+    }
+
+    &__more { 
+      padding: 0 1rem 1rem; 
+      text-decoration: none; 
+    }
+
+    &__more:hover { 
+      text-decoration: underline; 
+      text-decoration-color: $color-neon-green; 
+    }
+  }
+}
+
+@media (min-width: $bp-md) { 
+  .posts__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  } 
+}
+
+@media (min-width: $bp-lg) { 
+  .posts__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }  
+}

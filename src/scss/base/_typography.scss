@@ -1,0 +1,109 @@
+@use '../abstracts' as *;
+@use 'sass:color';
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5, 
+h6 {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  // font-weight: 700;
+  // font-weight: 900;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2.1rem;
+}
+
+h4 {
+  font-size: 1.7rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+small {
+  font-size: .8rem;
+}
+
+
+// Base link
+a {
+  text-decoration: none;
+  text-underline-offset: .4rem;
+  text-decoration-thickness: 1.6px;
+  text-decoration-skip-ink: auto;
+  color: $color-text-muted;
+  transition: color .2s ease;
+}
+
+// Unvisited
+a:link {
+  color: $color-text-muted;
+}
+
+// Visited (subtle purple tint)
+a:visited {
+  color: color.mix($color-neon-purple, $color-text-muted, 28%);
+}
+
+// Hover
+a:hover {
+  color: $color-text-light;
+  text-decoration: underline;
+  text-decoration-color: rgba($color-neon-green, .9);
+}
+
+// Focus/focus-visible (keyboard first)
+a:focus-visible,
+a:hover:focus-visible {
+  outline: 2px solid $color-neon-green;
+  outline-offset: 2px;
+  border-radius: .25rem;
+  text-decoration: underline;
+  text-decoration-color: $color-neon-green;
+}
+
+a:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+
+}
+
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:active {
+  color: color.mix($color-neon-green, $color-neon-blue, 35%);
+  text-decoration-color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none; 
+  }
+}
