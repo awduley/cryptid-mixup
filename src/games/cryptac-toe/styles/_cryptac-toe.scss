@@ -1,0 +1,85 @@
+@use '../../../scss/abstracts' as *;
+
+.ctt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 2rem 1rem;
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+  background: radial-gradient(circle at top, #111827, #020305);
+
+  &__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    text-transform: uppercase;
+  }
+
+  &__board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.5rem, 1vw, 0.9rem);
+    width: min(90vw, 32rem);
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    background: $color-bg-dark;
+  }
+
+  &__square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    background: $color-bg-light;
+    border: none;
+    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.5);
+    padding: 0;
+    transition: 
+      transform 0.12s ease,
+      box-shadow 0.12s ease,
+      background-color 0.12s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 .8rem 1.6rem rgba(0, 0, 0, 0.7);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &__icon {
+    width: 70%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__status-text {
+    opacity: 0.9;
+  }
+
+  &__reset {
+    padding: .4rem 1rem;
+    border-radius: 100rem;
+    border: none;
+    background: $color-neon-green;
+    color: #020308;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: .8rem;
+  }
+}

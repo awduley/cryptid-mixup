@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+.game-card {
+
+  &__media {
+    aspect-ratio: 16/9;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 1200px;
+      image-rendering: auto;
+      transform: none;
+      filter: none;
+    }
+  }
+
+  &__badge {
+    pointer-events: none;
+  }
+
+  &__body {
+    text-align: left;
+    margin-top: .6rem;
+  }
+
+  &__title {
+    margin-block: .6rem;
+  }
+
+  &__blurb {
+    margin: .6rem 0;
+    max-width: 60ch;
+  }
+
+  &__cta {
+    display: inline-flex;
+  }
+}

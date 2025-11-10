@@ -68,7 +68,7 @@ function shuffleCards(array) {
 
 function buildDeck(baseList, pairs = 8) {
   // 1) pick the first N cryptids (N = pairs)
-  const chosen = baseList.slice(0, pairs);
+  const chosen = shuffleCards(baseList).slice(0, pairs);
 
   // 2) duplicate each cryptid into two card instances
   const duplicated = chosen.flatMap(({ id, label }) => ([
@@ -107,6 +107,33 @@ export default function CryptidMixup() {
   const [isResolving, setIsResolving] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [timerOn, setTimerOn] = useState(false);
+  const [liveText, setLiveText] = useState('');
+  const [focusIdx, setFocusIdx] = useState(0);
+
+  function handleGridKeys(e) {
+    if (deck.length === 0) return;
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      setFocusIdx(i => Math.min(i + 1, deck.length - 1));
+    }
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      setFocusIdx(i => Math.min(i - 1, 0));
+    }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setFocusIdx(i => Math.min(i + close, deck.length - 1));
+    }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setFocusIdx(i => Math.min(i - cols, 0));
+    }
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const card = deck[focusIdx];
+      if (card && card.state === 'facedDown' && !isResolving) handleFlip(card.instanceId);
+    }
+  }
 
   function handleReset() {
     setDeck(() => buildDeck(cryptidList)); // fresh shuffled deck
@@ -149,6 +176,7 @@ export default function CryptidMixup() {
     const [a, b] = up;
     const isMatch = a.pairId === b.pairId;
     isMatch ? sfx.match() : sfx.miss();
+    setLiveText(isMatch ? `${a.label} matched!` : `No match.`)
 
     const t = setTimeout(() => {
       setDeck(prev =>
@@ -178,6 +206,7 @@ export default function CryptidMixup() {
       sfx.ambient.stop();
       audioStartedRef.current = false;     // so a new game can start it again
       sfx.win();
+      setLiveText('You win!');
     } 
   }, [isWin]);
 
@@ -211,6 +240,8 @@ export default function CryptidMixup() {
 
       <main className="cmx__main">
 
+        <div className="sr-only" aria-live="polite">{liveText}</div>
+
         {isWin && (
           <div className="cmx__win" role="status">
             You win! 🎉
@@ -222,7 +253,7 @@ export default function CryptidMixup() {
         )}
         
         {/* Board placeholder */}
-        <div className="cmx__board" role="group" aria-labelledby="cmx__board--title">
+        <div className="cmx__board" role="grid" aria-labelledby="cmx__board--title" tabIndex={0} aria-activedescendant={`cmx-card-${focusIdx}`} onKeyDown={handleGridKeys}>
           <h2 id="cmx__board--title" className="sr-only">Memory board, 4 by 4</h2>
           {deck.map(card => (
             <button

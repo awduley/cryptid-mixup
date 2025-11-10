@@ -1,11 +1,20 @@
 export const GAMES = [
   {
-    id: 'n',
-    slug: 'n',
-    title: 'n',
-    blurb: 'n',
-    cover: 'n',
-    status: 'n',
-    difficulty: 'n'
+    id: 'cryptid-mixup',
+    slug: 'cryptid-mixup',
+    title: 'Cryptid Mix-up',
+    blurb: 'Match the cryptids and find the pairs.',
+    status: 'playable',
+    difficulty: '1',
+    coverBase: '/games/cryptid-mixup/images/hero',
+  },
+  {
+    id: 'cryptac-toe',
+    slug: 'cryptac-toe',
+    title: 'Cryptac-Toe',
+    blurb: 'Be the first to get three in a row.',
+    status: 'playable',
+    difficulty: '1',
+    coverBase: '/games/cryptac-toe/images/hero',
   },
 ];
