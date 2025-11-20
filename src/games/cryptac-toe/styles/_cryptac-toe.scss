@@ -72,6 +72,26 @@
     opacity: 0.9;
   }
 
+  &__square--win {
+    outline: 3px solid transparent;
+    box-shadow: 0 0 .8rem rgba(0, 0, 0, 0);
+    animation: ctt-win-pulse 1s ease-in-out infinite alternate;
+  }
+
+  &__square--win-sasquatch {
+    outline-color: $color-neon-green;
+    box-shadow:
+      0 0 0.8rem rgba($color-neon-green, 0.7),
+      0 0 1.4rem rgba($color-neon-green, 0.5);
+  }
+
+  &__square--win-dogman {
+    outline-color: $color-neon-purple;
+    box-shadow:
+      0 0 0.8rem rgba($color-neon-purple, 0.7),
+      0 0 1.4rem rgba($color-neon-purple, 0.5);
+  }
+
   &__reset {
     padding: .4rem 1rem;
     border-radius: 100rem;
@@ -81,5 +101,21 @@
     font-weight: 600;
     cursor: pointer;
     font-size: .8rem;
+  }
+}
+
+@keyframes ctt-win-pulse {
+  from {
+    transform: translateY(-2px) scale(1);
+  }
+
+  to {
+    transform: translateY(-2px) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctt__square--win {
+    animation: none;
   }
 }

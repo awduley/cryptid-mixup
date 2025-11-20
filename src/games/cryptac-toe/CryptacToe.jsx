@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import '../shared/styles/index.scss';
 import './styles/index.scss';
+
+const PLACE_SFX = '/games/cryptac-toe/sounds/place.mp3';
+const WIN_SAS_SFX = '/games/cryptac-toe/sounds/win-sasquatch.mp3';
+const WIN_DOG_SFX = '/games/cryptac-toe/sounds/win-dogman.mp3';
+const DRAW_SFX = '/games/cryptac-toe/sounds/draw.mp3';
 
 const winConditions = [
   [0, 1, 2], // Rows
@@ -18,27 +23,64 @@ export default function CryptacToe() {
 
   const [squares, setSquares] = useState(new Array(9).fill(null));
   const [isSasquatchTurn, setIsSasquatchTurn] = useState(true);
+  const [winLine, setWinLine] = useState(null);
+  const [winner, setWinner] = useState(null);
   const [hasWon, setHasWon] = useState(false);
+  const [isDraw, setIsDraw] = useState(false);
+  const [muted, setMuted] = useState(false);
+
+  
+  const placeRef = useRef(null);
+  const winSasRef = useRef(null);
+  const winDogRef = useRef(null);
+  const drawRef = useRef(null);
+
+  useEffect(() => {
+    placeRef.current = new Audio(PLACE_SFX);
+    winSasRef.current = new Audio(WIN_SAS_SFX);
+    winDogRef.current = new Audio(WIN_DOG_SFX);
+    drawRef.current = new Audio(DRAW_SFX);
+
+    // subtle volume so it's not jarring
+    [placeRef, winSasRef, winDogRef, drawRef].forEach(ref => {
+      if (ref.current) ref.current.volume = .35;
+    });
+  }, []);
+
+  function play(ref) {
+    if (muted || !ref?.current) return;
+    try {
+      ref.current.currentTime = 0;
+      ref.current.play();
+    } catch {}
+  }
 
   function handleSquareClick(i) {
-    if (hasWon) return; 
+    if (hasWon || isDraw) return; 
+    if (squares[i] !== null) return;
 
-    if (squares[i] !== null) {
-      return; 
+    const next = [...squares];
+    const player = isSasquatchTurn ? 'sasquatch' : 'dogman';
+    next[i] = player;
+    play(placeRef);
+
+    setSquares(next);
+    setIsSasquatchTurn(prev => !prev);
+
+    const line = checkForWin(next);
+    if (line) {
+      setWinLine(line);
+      if (player === 'sasquatch') play(winSasRef);
+      else play(winDogRef);
+      return;
     }
 
-    const shallowSquares = squares.slice();
-
-    isSasquatchTurn ? (
-      shallowSquares[i] = 'sasquatch'
-    ): (
-      shallowSquares[i] = 'dogman'
-    );
-
-    setSquares(shallowSquares);
-    setIsSasquatchTurn(prevState => !prevState);
-
-    checkForWin(shallowSquares);
+    if (isBoardFull(next)) {
+      setIsDraw(true);
+      play(drawRef);
+      // optional: popup('It's a draw!)
+    }
+    
   }
 
   function getSquareIcon(value) {
@@ -67,20 +109,34 @@ export default function CryptacToe() {
   }
 
   function checkForWin(squares) {
-    for (const condition of winConditions) {
-      const [a, b, c] = condition;
+    for (const [a, b, c] of winConditions) {
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         setHasWon(true);
-        return;
+        setWinner(squares[a])
+        return [a, b, c];
       }
     }
-    return null; // No winner yet.
+    return null
+  }
+
+  function isBoardFull(squares) {
+    return squares.every(Boolean);
   }
 
   function handleReset() {
     setSquares(new Array(9).fill(null));
-    setSasquatchTurn(true);
+    setIsSasquatchTurn(true);
     setHasWon(false);
+    setIsDraw(false);
+    setWinLine(null);
+    setWinner(null);
+
+    [placeRef, winSasRef, winDogRef, drawRef].forEach(ref => {
+      if (ref.current) {
+        ref.current.pause();
+        ref.current.currentTime = 0;
+      }
+    });
   }
 
   return(
@@ -89,12 +145,32 @@ export default function CryptacToe() {
         Cryptac-Toe</h1>
       <section className="ctt__board">
         {squares.map((v, i) => {
-          return(<button key={i} className="ctt__square" type="button" onClick={() => handleSquareClick(i)}>{getSquareIcon(v)}</button>);
+          return(<button 
+            key={i} 
+            className={`ctt__square ${
+              winLine?.includes(i)
+                ? winner === 'dogman'
+                  ? 'ctt__square--win ctt__square--win-dogman'
+                  : 'ctt__square--win ctt__square--win-sasquatch'
+                : ''
+            }`} 
+            type="button" 
+            disabled={!!v || hasWon || isDraw}
+            onClick={() => handleSquareClick(i)}>
+            {getSquareIcon(v)}
+          </button>);
         })}
       </section>
       <section className="ctt__status">
-        <span className="ctt__status-text">{isSasquatchTurn ? "Sasquatch's turn" : "Dogman's Turn"}</span>
-        <button className="ctt__reset" type="button" onClick={handleReset}>Reset</button>
+        <span className="ctt__status-text" role="status" aria-live="polite">
+          {hasWon
+            ? `${winner === 'sasquatch' ? 'Sasquatch' : 'Dogman'} wins!`
+            : isDraw
+              ? "It's a draw!"
+              : (isSasquatchTurn ? "Sasquatch's turn" : "Dogman's turn")
+          }
+        </span>
+        <button className="ctt__reset" type="button" onClick={() => { handleReset(); setMuted(false); }} aria-label="Reset the game and unmute sound effects">Reset</button>
       </section>
     </main>
   );

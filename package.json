@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:sitemap": "node scripts/generate-sitemap.cjs",
+    "build:full": "npm run build && npm run build:sitemap",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:mascots": "node scripts/optimize-mascots.js"
   },
   "dependencies": {
     "react": "^19.1.1",
@@ -26,6 +29,7 @@
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
     "sass": "^1.92.1",
+    "sharp": "^0.34.5",
     "vite": "^7.1.2"
   }
 }

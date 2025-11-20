@@ -10,10 +10,6 @@ export default function Home() {
     <>
       <GamesTeaser />
       <NewestPosts />
-      <section className="games-dev">
-        <h2>Orb Catcher</h2>
-        <OrbCatcher />
-      </section>
     </>
   );
 }

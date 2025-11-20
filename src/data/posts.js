@@ -1,4 +1,4 @@
-import thumb from '../assets/images/logo-2.png';
+import thumb from '/images/branding/logo/logo-img-600.png';
 
 export const POSTS = [
   {

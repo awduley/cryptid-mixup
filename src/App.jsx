@@ -6,7 +6,11 @@ import Footer from './layout/Footer.jsx';
 
 import Home from './pages/index.jsx'; 
 import About from './pages/About.jsx';
+import Blog from './pages/Blog.jsx';
 import NotFound from './pages/NotFound.jsx';
+
+import Mascots from './pages/Mascots.jsx';
+import MascotsDetailsPage from './pages/MascotsDetailPage.jsx';
 
 import CryptidMixup from './games/cryptid-mixup/CryptidMixup.jsx';
 import CryptacToe from './games/cryptac-toe/CryptacToe.jsx';
@@ -22,6 +26,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/team" element={<Mascots />} />
+          <Route path="/team/:slug" element={<MascotsDetailsPage />} />
           <Route path="/games/cryptid-mixup" element={<CryptidMixup />} />
           <Route path="/games/cryptac-toe" element={<CryptacToe />} />
           <Route path="/games/orb-catcher" element={<OrbCatcher />} />

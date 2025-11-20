@@ -23,6 +23,18 @@ export default function About() {
         </div>
       </details>
 
+      <details>
+        <summary><strong>Cryptac-Toe</strong> — cryptid tic-tac-toe</summary>
+        <div>
+          <p>Fast, neon-styled tic-tac-toe starring Sasquatch vs. Dogman. Built with React + SCSS, with win/draw logic, colored win highlights, and click SFX.</p>
+          <ul>
+            <li><strong>How to play:</strong> Pick a square to place your token; first to 3-in-a-row wins. If the board fills with no line, it’s a draw.</li>
+            <li><strong>What’s next:</strong> Scoreboard, keyboard play (arrow keys + Enter), improved tokens, tiny win modal.</li>
+            <li><strong>Tech:</strong> Vite, React, SCSS, responsive images (WebP/AVIF), SFX with <code>Audio</code> + refs.</li>
+          </ul>
+        </div>
+      </details>
+
       {/* Add more games here as you build them */}
       <details>
         <summary><strong>Future Game Slot</strong> — coming soon</summary>

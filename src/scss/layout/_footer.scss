@@ -9,7 +9,7 @@
     rgba($color-bg-dark, .65)
   ),
   linear-gradient(rgba($color-neon-purple, .12), rgba($color-neon-purple, 0)),
-  url('../../assets/images/bg-footer.jpg');
+  url('/images/backgrounds/bg-footer.png');
 
   // Multiply applies the tint to the photo without getting muddy
   background-blend-mode: normal, normal, multiply, normal;
