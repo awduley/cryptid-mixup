@@ -22,11 +22,11 @@ export const mascots = [
     // Fun facts / bullet list section
     funFacts: [
       "Species: Forest Giant / Pacific Northwest Wanderer.",
-      "Height: about 9 feet tall.",
-      "Likes: drumming on fallen logs, mossy trails, berries, and avoiding tourists.",
-      "Dislikes: selfie sticks, flash photography, rotten pumpkins, and people who claim they saw him but get every detail wrong.",
-      "Personality: gentle, cautious, and surprisingly curious.",
-      `First recorded appearance: while filming a Minecraft-style adventure video—he was supposed to be “Big Foot,” but destiny had other plans.`,
+      "Height: About 9 feet tall.",
+      "Likes: Drumming on fallen logs, mossy trails, berries, and avoiding tourists.",
+      "Dislikes: Selfie sticks, flash photography, rotten pumpkins, and people who claim they saw him but get every detail wrong.",
+      "Personality: Gentle, cautious, and surprisingly curious.",
+      `First recorded appearance: While filming a Minecraft-style adventure video—he was supposed to be “Big Foot,” but destiny had other plans.`,
     ],
   },
   {
@@ -50,15 +50,41 @@ export const mascots = [
     // Fun facts / bullet list section
     funFacts: [
       "Species: Greater Northern Combat Beaver.",
-      "Height: 3'4&quot; standing… but 7'2&quot; if you count his ego.",
-      "Likes: chewing through structural supports, shouting contests, fresh lumber, being right (even when he's objectively wrong).",
-      "Dislikes: authority, warnings, calm discussions, poorly constructed dams, and creatures who say “technically….",
-      "Temper Level: measured on the Brutus Scale — ranges from “irritated” to “actively demolishing something.",
-      "Notable Achievement: built a beaver lodge so magnificent it caused a regional lumber shortage.",
-      "Fun Failure: once tried to fight a waterfall.",
+      "Height: 3'4\"; standing… but 7'2\"; if you count his ego.",
+      "Likes: Chewing through structural supports, shouting contests, fresh lumber, being right (even when he's objectively wrong).",
+      "Dislikes: Authority, warnings, calm discussions, poorly constructed dams, and creatures who say “technically….",
+      "Temper Level: Measured on the Brutus Scale — ranges from “irritated” to “actively demolishing something.",
+      "Notable Achievement: Built a beaver lodge so magnificent it caused a regional lumber shortage.",
+      "Fun Failure: Once tried to fight a waterfall.",
       "Catchphrase: Don't test me, twig legs.",
     ],
   },
+  {
+  name: "Dredsky",
+  slug: "dredsky",
+  tagline: "Smells like low tide... must be showtime.",
+
+  summary:
+    "Dredsky (pronounced dread-skee) never intended to be called Dredsky. His real name was Dredseksy—because honestly, look at him, he's a devastatingly handsome undead. But after a chaotic dungeon brawl in a great hall, a groupmate kept shouting 'Dredsky!' by mistake… and the name stuck harder than rigor mortis. Now, even he uses it.",
+
+  lore: [
+    `When he's not donning his battered metal armor and tanking for anyone brave (or foolish) enough to venture into the Cryptid Quest Woods, Dredsky can almost always be found shredding on his blackened V-shaped guitar, which he affectionately calls "Frostbite." The icy blue runes he carved into it pulse with faint energy—maybe magic, maybe attitude.`,
+
+    `Because of his undead nature, most assume he's something to fear. He does look intimidating, with that permanent scowl and deep gravelly voice that sounds like it crawled out of a crypt at sunrise. But in truth, he's humble, respectful, and surprisingly easy to talk to. Dredsky is the first to help when someone's in trouble—though his voice tends to make the offer sound like a threat.`,
+
+    `As for where he comes from, even Dredsky isn't entirely sure. Being dead really messes with your memory. His Nordic-style clothing and the runes etched into Frostbite suggest a northern origin… yet sometimes, in the quiet moments between riffs, he recalls a fog-shrouded place called Silverpine Forest. Whether that memory is real or just undead brain static is anyone's guess.`
+  ],
+
+  funFacts: [
+    "Species: Nordic Forest Undead.",
+    "Height: 5'7\" in his usual hunched stance, but a full 6'0\" if he ever remembered to stand up straight.",
+    "Likes: Death metal, brutal death metal, melodic death metal, black metal, progressive metal—and wearing metal armor while swinging a metal sword. Basically, if it's metal, he's into it.",
+    "Dislikes: Gnomes, anything labeled 'fresh-scented,' guitars that aren't tuned down at least a whole step, and rogues who over-aggro and then blame the tank.",
+    "Personality: Respectful, humble, intelligent, and unintentionally intimidating.",
+    "First recorded appearance: Spotted deep within a mysterious tower located somewhere within the rugged landscape of Deadwind Pass."
+  ]
+}
+
 
   // You'll add more mascots here later:
   // {
