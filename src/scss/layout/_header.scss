@@ -93,6 +93,10 @@
       gap: 1rem 1rem;
       margin: 0;
     }
+
+    & .dead {
+      text-decoration: line-through;
+    }
   }
 
   &__cta {

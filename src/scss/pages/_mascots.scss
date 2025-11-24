@@ -38,6 +38,8 @@
   }
 
   &__card {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 22rem;
     padding: clamp(1rem, 2vw, 1.5rem);
@@ -56,6 +58,11 @@
       transform: translateY(-2px);
       border-color: $color-neon-purple;
     }
+  }
+
+  &__card-header {
+    min-height: 7rem;
+    margin-bottom: 1rem;
   }
 
   &__card-image-wrapper {

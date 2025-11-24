@@ -53,7 +53,7 @@ function Header() {
           </picture></a>
           <div className="hero__title-tag">
             <h1><a href="/" className="hero__title">Cryptid Quest</a></h1>
-            <h3 className="hero__tagline">Search the Unknown</h3>
+            <h3 className="hero__tagline">Welcome to the Woods!</h3>
           </div>
         </div>
         <nav className="hero__nav" aria-label="Main">
@@ -64,7 +64,7 @@ function Header() {
             <li><a href="/contact">Contact</a></li>
             <NavLink to="/team">The Team</NavLink>
             <li><a href="/crypt">The Crypt</a></li>
-            <li><a href="/submit-cta">Submit a Sighting</a></li>
+            <li><a href="/submit-cta" className="dead">Submit a Sighting</a></li>
           </ul>
         </nav>
       </section>

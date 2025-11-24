@@ -19,8 +19,10 @@ export default function Mascots() {
             to={`/team/${mascot.slug}`}
             className="mascots__card"
           >
-            <h2 className="mascots__card-name">{mascot.name}</h2>
-            <p className="mascots__card-tagline">{mascot.tagline}</p>
+            <div className="mascots__card-header">
+              <h2 className="mascots__card-name">{mascot.name}</h2>
+              <p className="mascots__card-tagline">{mascot.tagline}</p>
+            </div>
             
             <div className="mascots__card-image-wrapper">
               <MascotImage 
