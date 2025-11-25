@@ -32,7 +32,7 @@
     margin-bottom: clamp(2rem, 4vw, 3rem);
 
     @media (min-width: $bp-md) {
-      grid-template-colums: minmax(0, 1fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
       align-items: center;
     }
   }

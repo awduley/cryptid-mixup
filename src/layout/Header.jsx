@@ -53,7 +53,7 @@ function Header() {
           </picture></a>
           <div className="hero__title-tag">
             <h1><a href="/" className="hero__title">Cryptid Quest</a></h1>
-            <h3 className="hero__tagline">Welcome to the Woods!</h3>
+            <h3 className="hero__tagline">Welcome to the Northern Fringe!</h3>
           </div>
         </div>
         <nav className="hero__nav" aria-label="Main">

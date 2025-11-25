@@ -2,7 +2,7 @@ export const mascots = [
   {
     name: "Bif Goot",
     slug: "bif-goot",
-    tagline: "Forest giant with a knack for percussion.",
+    tagline: "Forest giant with a knack for percussion. He really knows his polyrhythms! He just can't help speeding up tempo during his epic fills!",
     summary:
       "A 9-foot-tall Sasquatch who drums on fallen logs, guards mossy trails, and prefers rhythm over words. Bif is the chief rhythm composer for Cryptid Quest.",
 
@@ -32,7 +32,7 @@ export const mascots = [
   {
     name: "Brutus the Belligerent Beaver",
     slug: "brutus-the-belligerent-beaver",
-    tagline: "Ill-tempered, hot-headed, and ready to chew you out.",
+    tagline: "Ill-tempered, hot-headed, and ready to chew you out. But he's the first person you want setting up your stage.",
     summary:
       "Brutus is a volatile woodland bruiser with a bite to match. Known across Cryptid Quest Woods as the forest's most combative critter, he's the type to chomp first and ask questions never. With an attitude as sharp as his incisors, Brutus is always one snapped twig away from a full-blown meltdown.",
 
@@ -62,13 +62,13 @@ export const mascots = [
   {
   name: "Dredsky",
   slug: "dredsky",
-  tagline: "Smells like low tide... must be showtime.",
+  tagline: "Smells like low tide... must be showtime. Wait, where's my guitar tech? Do I even have a guitar tech? I never got my pants...",
 
   summary:
-    "Dredsky (pronounced dread-skee) never intended to be called Dredsky. His real name was Dredseksy—because honestly, look at him, he's a devastatingly handsome undead. But after a chaotic dungeon brawl in a great hall, a groupmate kept shouting 'Dredsky!' by mistake… and the name stuck harder than rigor mortis. Now, even he uses it.",
+    "Dredsky (pronounced dread-skee) never intended to be called Dredsky. His real name was Dredseksy—because honestly, look at him, he's a devastatingly handsome undead! But after a chaotic dungeon brawl in a great hall, a groupmate kept shouting 'Dredsky!' by mistake… and the name stuck harder than rigor mortis. Now, even he uses it.",
 
   lore: [
-    `When he's not donning his battered metal armor and tanking for anyone brave (or foolish) enough to venture into the Cryptid Quest Woods, Dredsky can almost always be found shredding on his blackened V-shaped guitar, which he affectionately calls "Frostbite." The icy blue runes he carved into it pulse with faint energy—maybe magic, maybe attitude.`,
+    `When he's not donning his battered metal armor and tanking for anyone brave (or foolish) enough to venture into the Cryptid Quest Woods, Dredsky can almost always be found shredding on his iconic blackened V-shaped guitar, which he affectionately calls "Frostbite." The icy blue runes he carved into it pulse with faint energy—maybe magic, maybe attitude.`,
 
     `Because of his undead nature, most assume he's something to fear. He does look intimidating, with that permanent scowl and deep gravelly voice that sounds like it crawled out of a crypt at sunrise. But in truth, he's humble, respectful, and surprisingly easy to talk to. Dredsky is the first to help when someone's in trouble—though his voice tends to make the offer sound like a threat.`,
 
@@ -82,6 +82,35 @@ export const mascots = [
     "Dislikes: Gnomes, anything labeled 'fresh-scented', guitars that aren't tuned down at least a whole step, and rogues who over-aggro and then blame the tank.",
     "Personality: Respectful, humble, intelligent, and unintentionally intimidating.",
     "First recorded appearance: Spotted deep within a mysterious tower located somewhere within the rugged landscape of Deadwind Pass."
+  ]
+},
+{
+  name: "Grimlight",
+  slug: "grimlight",
+  tagline:
+    "Big wings. Bright eyes. Louder heart. Just… please don’t bring up the bridge.",
+
+  summary:
+    "Grimlight, known onstage as Grimlight the Obsidian Child, is Chaos Frequency’s towering Mothman rhythm guitarist. Eight feet tall with a ten-foot wingspan and eyes that burn like crimson lanterns, he looks like a nightmare summoned from the Northern Fringe. In reality, he’s the gentlest soul in the band—a soft-spoken cryptid who gets distracted by glowsticks and LED toys just as easily as he locks into a crushing riff.",
+
+  lore: [
+    `Wrapped in short, velvety charcoal-black fur and massive bat–moth hybrid wings, Grimlight cuts an intimidating figure long before he plays a note. When the lights drop and the show begins, he steps center stage, slowly spreads his obsidian wings, and lets his neon purple, semi-transparent guitar flare to life. For a moment, all anyone can see is a living shadow with burning red eyes and a glowing instrument—then Chaos Frequency hits their first chord, and the crowd forgets how to breathe.`,
+
+    `Offstage, Grim is shy, careful, and almost painfully gentle. He speaks in a soft buzzing tone, keeps his posture slightly hunched so he doesn’t loom too much, and spends an embarrassing amount of time arranging and re-arranging his collection of light-up trinkets, glowsticks, and tiny LED gadgets. The matte black rings on his fingers, the spiked wrist wrap on his fretting hand, and the faintly glowing red pendant around his neck all look intimidating—but to him, they’re just comforting anchors in a world that still feels too bright and loud.`,
+
+    `Grimlight’s story truly began when he fled a disaster he never caused. After a tragic bridge collapse—one that locals whispered was the work of a “winged red-eyed monster”—Grim took to the sky in panic and grief. Flying blind through stormy skies, he crash-landed on the Northern Fringe and slammed directly into Stoneblood, Chaos Frequency’s troll bassist. Instead of fighting back, Stoneblood simply sat beside the trembling cryptid and told him he was safe. That single moment of kindness would change Grimlight’s life forever.`,
+
+    `Now, as the rhythm guitarist of Chaos Frequency, Grimlight stands as the band’s quiet backbone. His playing is steady, hypnotic, and surprisingly precise, weaving dark, pulsing chords beneath Dredsky’s searing leads. The rest of the band treats him like family—and like the child of the group all at once. They’re fiercely protective of him, especially when someone in the crowd dares to mention the bridge. Most of the time, Grim’s eyes glow like warm embers. But when that rumor surfaces, the glow goes cold, the shadows around his face deepen, and for a heartbeat, everyone remembers why the legend of the Mothman started in fear.`
+  ],
+
+  funFacts: [
+    "Species: Mothman cryptid (shadow-furred, winged, and very easily distracted by lights).",
+    "Height: 8'0\" tall with a 10' wingspan, though he hunches a little when he’s nervous so he doesn’t tower over everyone quite as much.",
+    "Role in Chaos Frequency: Rhythm guitarist, shadow silhouette specialist, and unofficial guardian of all things that glow in the dark.",
+    "Likes: LED toys, glowsticks, stage lights, slow builds into massive riffs, quiet hangs with the band, and standing somewhere high where he can feel the wind in his wings.",
+    "Dislikes: Jokes about the bridge, sudden loud noises that aren’t part of the set, blinding white floodlights, and people assuming he’s a monster just because he looks like one.",
+    "Personality: Gentle, shy, loyal, easily overwhelmed but deeply caring—an enormous cryptid with the emotional energy of a nervous but very sweet kid.",
+    "First recorded appearance: Crash-landed into Stoneblood somewhere along the Northern Fringe after fleeing the scene of a collapsed bridge, crying so hard he could barely unfurl his wings."
   ]
 },
 {
@@ -112,34 +141,9 @@ export const mascots = [
   ]
 },
 {
-  name: "Stoneblood",
-  slug: "stoneblood",
-  tagline: "A quiet giant rooted deep in the old woods, where moss and stone shape his rhythm.",
-
-  summary:
-    "Stoneblood is an ancient forest troll from the Northern Fringe, wandering its deep woods with the quiet strength of moss-covered stone and towering pines. Known for his calm presence, deep connection to the ancient woods, and basslines that echo the steady rhythm of the forest, he serves as the grounding force of the crew.",
-
-  lore: [
-    `Old stories from the Northern Fringe speak of a forest troll who has walked the same winding paths for centuries, leaving footprints that fill with moss instead of mud. That troll is Stoneblood. He keeps to the deep woods where the trees grow tallest, moving with a patient, deliberate gait as if he has all the time in the world—because, for him, time has always moved differently. Hunters, loggers, and lost travelers rarely see more than his silhouette between the trunks, but they all remember the feeling that something vast and calm was watching over them, rather than hunting them.`,
-
-    `Stoneblood's rhythm began long before he ever held a bass. As a young troll, he learned to listen to the forest instead of his own footsteps: the slow creak of old pines in the wind, the hollow thud of roots shifting deep beneath the soil, and the sharp crack of stone under winter ice. Those sounds shaped him—not into something sluggish, but into something powerful. When he finally carved a bass from ancient wood and worn metal, its voice echoed everything he had learned: slow when the forest is quiet, heavy when storms roll through, and astonishingly fast when the wild heart of the Fringe surges. His playing carries the full range of nature itself, from stillness to fury.`,
-
-    `Most creatures of the Northern Fringe fear trolls, but Stoneblood is the sort who gains companions instead of trophies. A small Eurasian red squirrel has claimed his shoulder as a favorite perch, riding with him through mist and underbrush as if it were the most natural thing in the world. It was through quiet meetings like these—and a few chance encounters with other wanderers of the woods—that Stoneblood found his way into the wider cryptid company. He does not speak often, but when his bass roars to life, even the bravest cryptids pause, feeling that ancient, grounding rhythm stirring the forest floor beneath their feet.`
-  ],
-
-  funFacts: [
-    "Species: Forest Troll of the Northern Fringe.",
-    "Height: Around 9' tall (not counting his hair).",
-    "Likes: Mossy stones warmed by the sun, deep forest paths, small animals that aren't afraid of him, and basslines you can feel in your ribs; he'll stand perfectly still for hours rather than disturb a squirrel sleeping on his shoulder.",
-    "Dislikes: Axes biting into ancient trees, clanging machinery, campfire bragging, and anyone who can't keep time—especially Bif Goot, whose drum fills tend to speed up just enough to make Stoneblood visibly exhale.",
-    "Personality: Quiet, patient, and observant; slow to anger but immovable once he's decided to protect someone, with a dry sense of humor that usually shows up between songs rather than during them.",
-    "First recorded appearance: Mentioned as a 'gentle giant among the pines' in a weathered frontier journal from roughly 500 years ago, long before the Northern Fringe had a name on any map."
-  ]
-},
-{
   name: "Sparkplug",
   slug: "sparkplug",
-  tagline: "A tiny spark of kindness with a talent for big booms.",
+  tagline: "A tiny spark of kindness with a talent for big booms. She has such a huge heart, it almost rivals the size of her accidental explosions!",
 
   summary:
     "Sparkplug is the Northern Fringe’s most enthusiastic pyro tech, a tiny sable ferret whose kindness is matched only by her accidental explosions. Bright, cheerful, and armed with a spark igniter she probably shouldn’t click so often, she brings unexpected light to every show.",
@@ -159,6 +163,31 @@ export const mascots = [
     "Dislikes: Damp fuses, unexpected silence, scorch-resistant materials, and Brutus yelling 'NOT AGAIN!' from across the stage.",
     "Personality: Pure-hearted, enthusiastic, careful in theory and chaotic in practice, with a talent for making even her accidents feel charming.",
     "First recorded appearance: Logged by a traveling trapper about five years ago, who noted a 'bright-eyed little ferret carrying a fuse longer than she was tall' near the edge of Timberfell Basin."
+  ]
+},
+{
+  name: "Stoneblood",
+  slug: "stoneblood",
+  tagline: "A quiet forest troll giant rooted deep in the old woods, where moss and stone shape his rhythm. Yes, he plays a three string bass.",
+
+  summary:
+    "Stoneblood is an ancient forest troll from the Northern Fringe, wandering its deep woods with the quiet strength of moss-covered stone and towering pines. Known for his calm presence, deep connection to the ancient woods, and basslines that echo the steady rhythm of the forest, he serves as the grounding force of the crew.",
+
+  lore: [
+    `Old stories from the Northern Fringe speak of a forest troll who has walked the same winding paths for centuries, leaving footprints that fill with moss instead of mud. That troll is Stoneblood. He keeps to the deep woods where the trees grow tallest, moving with a patient, deliberate gait as if he has all the time in the world—because, for him, time has always moved differently. Hunters, loggers, and lost travelers rarely see more than his silhouette between the trunks, but they all remember the feeling that something vast and calm was watching over them, rather than hunting them.`,
+
+    `Stoneblood's rhythm began long before he ever held a bass. As a young troll, he learned to listen to the forest instead of his own footsteps: the slow creak of old pines in the wind, the hollow thud of roots shifting deep beneath the soil, and the sharp crack of stone under winter ice. Those sounds shaped him—not into something sluggish, but into something powerful. When he finally carved a bass from ancient wood and worn metal, its voice echoed everything he had learned: slow when the forest is quiet, heavy when storms roll through, and astonishingly fast when the wild heart of the Fringe surges. His playing carries the full range of nature itself, from stillness to fury.`,
+
+    `Most creatures of the Northern Fringe fear trolls, but Stoneblood is the sort who gains companions instead of trophies. A small Eurasian red squirrel has claimed his shoulder as a favorite perch, riding with him through mist and underbrush as if it were the most natural thing in the world. It was through quiet meetings like these—and a few chance encounters with other wanderers of the woods—that Stoneblood found his way into the wider cryptid company. He does not speak often, but when his bass roars to life, even the bravest cryptids pause, feeling that ancient, grounding rhythm stirring the forest floor beneath their feet.`
+  ],
+
+  funFacts: [
+    "Species: Forest Troll of the Northern Fringe.",
+    "Height: Around 9' tall (not counting his hair).",
+    "Likes: Mossy stones warmed by the sun, deep forest paths, small animals that aren't afraid of him, and basslines you can feel in your ribs; he'll stand perfectly still for hours rather than disturb a squirrel sleeping on his shoulder.",
+    "Dislikes: Axes biting into ancient trees, clanging machinery, campfire bragging, and anyone who can't keep time—especially Bif Goot, whose drum fills tend to speed up just enough to make Stoneblood visibly exhale.",
+    "Personality: Quiet, patient, and observant; slow to anger but immovable once he's decided to protect someone, with a dry sense of humor that usually shows up between songs rather than during them.",
+    "First recorded appearance: Mentioned as a 'gentle giant among the pines' in a weathered frontier journal from roughly 500 years ago, long before the Northern Fringe had a name on any map."
   ]
 },
 
