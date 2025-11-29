@@ -114,6 +114,33 @@ export const mascots = [
   ]
 },
 {
+  name: "Jervas Ironfur",
+  slug: "jervas-ironfur",
+  tagline:
+    "If he's staring at you… stop whatever you're doing. Immediately.",
+
+  summary:
+    "Jervas Ironfur is the Northern Fringe's most respected wolverine — and the one creature even Brutus refuses to sass. Quiet, unshakable, and built like he was carved from frozen bedrock, Jervas handles security for the band both onstage and online. His icy blue stare and battle-carved scar say it all: this is not someone you test.",
+
+  lore: [
+    `Not many creatures wander the snow-choked reaches of the Northern Fringe alone… but Jervas Ironfur has done so most of his life. Before joining the band's operations crew, he served as an unofficial guardian of the forest paths, turning away threats with little more than a look — and occasionally, a very decisive tackle.`,
+    
+    `Jervas possesses a natural gift for structure and discipline, making him the grounding force behind a band composed almost entirely of chaotic disasters. He manages security at shows, monitors the cyber systems for Cryptid Quest's site, and keeps everyone focused enough to actually function. Without him, the band would have imploded fifteen times over.`,
+    
+    `Though stoic by nature, Jervas is far from cold. Beneath that gruff silence lies loyalty and deep investment in his companions' wellbeing. The only real sign of softness he allows himself is his faint tolerance — and secret amusement — for Grimlight's antics. Still, even in his calm moments, those two piercing ice-blue eyes and that old scar running across his brow remind everyone: this wolverine has survived more than most creatures ever will.`
+  ],
+
+  funFacts: [
+    "Species: Eurasian Wolverine Cryptid (Gluttonus Vigilis).",
+    "Height: 6'4\" standing upright, but feels twice that when he's staring you down.",
+    "Eyes: Both a striking, icy blue — a rare trait among his kind.",
+    "Likes: Order, silence, punctuality, freshly fallen snow, and bandmates who stay on task (rare).",
+    "Dislikes: Tomfoolery, unapproved pyrotechnics, losing Wi-Fi signal during security checks, and Brutus's 'improvised renovations'.",
+    "Personality: Stoic, disciplined, deadpan, secretly protective, and universally intimidating.",
+    "Most notable fact: Brutus — who fears nothing — will not mouth off to Jervas. Not once. Not ever."
+  ]
+},
+{
   name: "Maerith",
   slug: "maerith",
   tagline:
