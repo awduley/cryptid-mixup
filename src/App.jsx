@@ -14,7 +14,7 @@ import MascotsDetailsPage from './pages/MascotsDetailPage.jsx';
 
 import CryptidMixup from './games/cryptid-mixup/CryptidMixup.jsx';
 import CryptacToe from './games/cryptac-toe/CryptacToe.jsx';
-import OrbCatcher from './games/orb-catcher';
+import DypetsBrikker from './games/dypets-brikker/DypetsBrikker.jsx';
 
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/team/:slug" element={<MascotsDetailsPage />} />
           <Route path="/games/cryptid-mixup" element={<CryptidMixup />} />
           <Route path="/games/cryptac-toe" element={<CryptacToe />} />
-          <Route path="/games/orb-catcher" element={<OrbCatcher />} />
+          <Route path="/games/dypets-brikker" element={<DypetsBrikker />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

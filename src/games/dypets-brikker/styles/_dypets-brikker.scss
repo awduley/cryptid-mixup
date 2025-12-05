@@ -1,1 +1,170 @@
 @use '../../../scss/abstracts' as *;
+
+.db {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // deep ocean background
+  background: linear-gradient(
+    to top,
+    #00010a 0%,    // abyss – almost pure black
+    #020617 25%,   // very dark blue
+    #0b3260 55%,   // mid-depth blue
+    #1e4fa8 80%,   // brighter blue
+    // #7dd3fc 100%   // light, near-surface water
+  );
+
+  &__board {
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 40rem;
+    border: .5rem;
+    overflow: hidden;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+  }
+
+  &__row {
+    display: flex;
+    flex: 1; // each row takes equal vertical space
+  }
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    font-weight: 600;
+    color: #e5e7eb;
+    border: 1px solid rgba(15, 23, 42, .7);
+    // transition: background 150ms ease-out, box-shadow 150ms ease-out;
+    // transition: background 150ms ease-out, box-shadow 150ms ease-out, color 150ms ease-out;
+    transition: background 150ms ease-out, box-shadow 150ms ease-out, color 150ms ease-out;
+    color: #e5e7eb;
+
+    &--selected {
+      outline: 3px solid #fbbf24;
+      outline-offset: -3px;
+      box-shadow: 0 0 1.2rem rgba(251, 191, 36, .7);
+    }
+  }
+
+  // Light squares – cold cyan metal
+  &__cell--light {
+    background: linear-gradient(
+      145deg,
+      #e0f2fe,  /* icy highlight */
+      #7dd3fc 40%,
+      #38bdf8 100%
+    );
+    box-shadow:
+      inset 0 2px 5px rgba(255, 255, 255, 0.25),
+      inset 0 -4px 8px rgba(15, 23, 42, 0.35);
+    color: #0f172a; // darker text reads better here
+  }
+
+  // Dark squares – gunmetal / deep navy
+  &__cell--dark {
+    background: linear-gradient(
+      145deg,
+      #020617,
+      #0b1120 40%,
+      #1e293b 100%
+    );
+    box-shadow:
+      inset 0 2px 4px rgba(148, 163, 184, 0.15),
+      inset 0 -4px 8px rgba(0, 0, 0, 0.55);
+  }
+
+
+  //  // Light squares – teal glow, like faint bioluminescence
+  // &__cell--light {
+  //   background: radial-gradient(
+  //     circle at 30% 20%,
+  //     #34d399,   /* bright teal highlight */
+  //     #0f766e 55%,
+  //     #064e3b 100%
+  //   );
+  //   box-shadow:
+  //     inset 0 3px 6px rgba(255, 255, 255, 0.12),
+  //     inset 0 -6px 10px rgba(0, 0, 0, 0.35);
+  // }
+
+  // // Dark squares – deep indigo, mostly matte
+  // &__cell--dark {
+  //   background: linear-gradient(
+  //     to bottom,
+  //     #050819,
+  //     #0b1120
+  //   );
+  //   box-shadow:
+  //     inset 0 -4px 8px rgba(0, 0, 0, 0.5),
+  //     inset 0 2px 4px rgba(148, 163, 184, 0.12);
+  // }
+
+
+  // // Light squares: warm, weathered stone
+  // &__cell--light {
+  //   background: linear-gradient(
+  //     to bottom,
+  //     #e5ddc7,  // lighter, sun-bleached stone
+  //     #c8bfa4   // slightly darker, worn stone
+  //   );
+  //   box-shadow:
+  //     inset 0 2px 4px rgba(255, 255, 255, 0.18),
+  //     inset 0 -3px 6px rgba(0, 0, 0, 0.12);
+  //   color: #111827; // darker text reads better on light stone
+  // }
+
+  // // Dark squares: damp moss / seaweed green
+  // &__cell--dark {
+  //   background: linear-gradient(
+  //     to bottom,
+  //     #1b2b24,  // deep, damp green-black
+  //     #274036   // mossy / seaweed tone
+  //   );
+  //   box-shadow:
+  //     inset 0 -4px 8px rgba(0, 0, 0, 0.45),
+  //     inset 0 2px 4px rgba(255, 255, 255, 0.06);
+  // }
+
+  // &__cell--light {
+  //   background: linear-gradient(
+  //      to bottom,
+  //     #4f9fd1,
+  //     #2f6f99
+  //   );
+  //   box-shadow: inset 0 .4rem .6rem rgba(255, 255, 255, .5);
+  // }
+
+  // &__cell--dark {
+  //   background: linear-gradient(
+  //     to bottom,
+  //     #050818,
+  //     #0b1730
+  //   );
+  //   box-shadow: inset 0 -.4rem .6rem rgba(0, 0, 0, .4);
+  // }
+
+  &__board-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e5e7eb;
+    margin-top: 1.5rem;
+    width: 32rem;
+    height: 32rem;
+    border-radius: .5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(15, 23, 42, 0.8);
+  }
+}

@@ -21,9 +21,9 @@ export const GAMES = [
     id: 'dypets-brikker',
     slug: 'dypets-brikker',
     title: 'Dypets Brikker',
-    blurb: 'Command Kraken and Lyngbakr is a deep-sea duel of strategy.',
+    blurb: 'Command Lyngbakr and Kraken in a deep-sea duel of strategy.',
     status: 'in development',
-    difficulty: '4',
+    difficulty: '1',
     coverBase: '/games/dypets-brikker/images/hero',
   },
 ];
