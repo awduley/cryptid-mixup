@@ -32,24 +32,29 @@ export default function DypetsBrikker() {
   function handleCellClick(rowIndex, cellIndex, cell) {
     setIsFirstTurnMessage(false);  
 
-    // If there's a piece and it does NOT belong to the current side, ignore it
-    if (cell && cell.side !== currentSide) {
-      console.log(
-      `That is a ${cell.side} piece at [${rowIndex}, ${cellIndex}] — not your turn.`
-      );
+    const hasSelection = !!selectedCell;
+
+    if (!hasSelection) {
+      // FIRST CLICK: no piece selected yet
+      if (!cell || cell.side !== currentSide) return;
+
+      // Otherwise, select this piece
+      setSelectedCell({ row: rowIndex, col: cellIndex });
       return;
-    }
-
-    // Otherwise, allow selection (own piece or empty square)
-    setSelectedCell({ row: rowIndex, col: cellIndex });
-
-    if (!cell) {
-    console.log(`Clicked empty square at [${rowIndex}, ${cellIndex}]`);
-  } else {
-    console.log(
-      `Clicked ${cell.side} piece at [${rowIndex}, ${cellIndex}] (isKing: ${cell.isKing})`
-    );
-  }
+      // SECOND CLICK: we already have a selectedCell...
+    } else {
+        if (!cell) {
+          const result = gameRef.current.tryMove(selectedCell.row, selectedCell.col, rowIndex, cellIndex)
+          if (result && result.success) {
+            setBoardGrid(gameRef.current.board.grid);
+            setCurrentSide(gameRef.current.currentSide);
+            setSelectedCell(null);
+          }
+          return; // we're done handling this click
+        } else if (cell.side === currentSide) {
+          setSelectedCell({ row: rowIndex, col: cellIndex });
+        }
+    } 
   }
 
   return(
@@ -76,8 +81,52 @@ export default function DypetsBrikker() {
 
                   return(
                     <div className={`db__cell ${isLightSquare ? 'db__cell--light' : 'db__cell--dark'} ${isSelected ? 'db__cell--selected' : ''}`} key={cellIndex} onClick={() => handleCellClick(rowIndex, cellIndex, cell)}>
-                      {isLyngbakr && 'L'}
-                      {isKraken && 'K'}
+                      {cell && (
+                        <div
+                          className={[
+                            'db__piece',
+                            `db__piece--${cell.side}`,
+                            cell.isKing ? 'db__piece--king' : '',
+                          ].join(' ')}
+                          aria-label={`${cell.side} ${cell.isKing ? 'king' : 'piece'}`}
+                        >
+                          {cell.side === 'kraken' ? (
+                            <svg className="db__emblem" viewBox="0 0 100 100" aria-hidden="true">
+                              {/* Tentacle spiral */}
+                              <path
+                                d="M50 50
+                                  m -4 0
+                                  a 4 4 0 1 0 8 0
+                                  a 8 8 0 1 1 -16 0
+                                  a 12 12 0 1 0 24 0
+                                  a 16 16 0 1 1 -32 0
+                                  a 20 20 0 1 0 40 0"
+                                fill="none"
+                              />
+                            </svg>
+                          ) : (
+                            <svg className="db__emblem" viewBox="0 0 100 100" aria-hidden="true">
+                              {/* Whale tail */}
+                              <path
+                                d="M20 62
+                                  C28 42, 44 38, 50 52
+                                  C56 38, 72 42, 80 62
+                                  C70 60, 62 64, 58 72
+                                  C54 80, 50 82, 50 82
+                                  C50 82, 46 80, 42 72
+                                  C38 64, 30 60, 20 62 Z"
+                                fill="none"
+                              />
+                              <path d="M50 52 C50 62, 50 70, 50 82" fill="none" />
+                            </svg>
+                          )}
+
+                          <span className="sr-only">
+                            {cell.side} {cell.isKing ? 'king' : 'piece'}
+                          </span>
+                        </div>
+                      )}   
+
                     </div>
                   );
                 })}

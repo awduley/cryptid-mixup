@@ -1,53 +1,55 @@
+import { Link } from 'react-router-dom';
+
 export default function About() {
   return(
     <main className="about">
-      <header>
-        <h1 id="top">About Cryptid Quest</h1>
-        <p>Cryptid Quest is my growing collection of small, fast, web-based games themed around legendary creatures. The goal: quick-to-play fun that doubles as a portfolio of polished, modern front-end work.</p>
+      <header id="top" className="about__header">
+        <h1>About Cryptid Quest</h1>
+
+        <p>Cryptid Quest is my playground for building polished, modern web experiences. It's also home to the Cryptid Quest Woods—the foggy treeline where my ragtag crew of anti-heroes—equal parts game-addicted troublemakers and the masterminds behind the would-be Viking metal band, {/*something Fjell*/}, roam.</p>
+
+        <p>You can jump into their world by playing quick web games in The Crypt (link to nudge them to the crypt page), following their antics through blog updates, and (soon) listening to the band's first full album, <em>And the Earth Trembles</em>, currently in production.</p>
+
+        <p>Behind the lore, this site is my living portfolio: I build and refine everything here to push my JavaScript and front-end skills further. If you're looking for a developer who ships, iterates, and obsesses over polish, I'm available.</p>
       </header>
 
-      <section id="games" className="about__games">
-        <h2>About the Games</h2>
-        <p>Each game panel below expands with a quick overview, how to play, and what’s next.</p>
+      <section className="about__explore"   >
+        <h2 id="explore">How to Explore</h2>
+        <ul>
+          <li><strong>Meet:</strong> Our outrageous band and team members, AKA<Link to="/the-crew"> The Crew</Link>.</li>
+          <li><strong>Play:</strong> Mini-games live in <Link to="/the-crypt">The Crypt</Link>.</li>
+          <li><strong>Follow:</strong> Updates and lore drop on the <Link to="/blog">Blog</Link>.</li>
+          <li><strong>Listen:</strong> The band's music will live on <Link to="/music">Music</Link> (soon).</li>
+        </ul>
       </section>
 
-      <details>
-        <summary><strong>Cryptid Mix-up</strong> — memory match</summary>
-        <div>
-          <p>A snappy memory game where you flip cards to find pairs of classic cryptids. Built with React + SCSS. Great for testing logic, animations, and accessibility patterns.</p>
-          <ul>
-            <li><strong>How to play:</strong> Flip two, match pairs, clear the board fast.</li>
-            <li><strong>What’s next:</strong> Hard mode, keyboard navigation, sound polish.</li>
-            <li><strong>Tech:</strong> Vite, React, SCSS, SFX.</li>
-          </ul>
-        </div>
-      </details>
+      <section className="about__build" arialabelledby="build">
+        <h2 id="build">How it's built</h2>
+        <p>Cryptid Quest is a hands-on project where I practice clean UI, responsive layout, accessibility basics, and solid game logic—then iterate until it feels finished.</p>
 
-      <details>
-        <summary><strong>Cryptac-Toe</strong> — cryptid tic-tac-toe</summary>
-        <div>
-          <p>Fast, neon-styled tic-tac-toe starring Sasquatch vs. Dogman. Built with React + SCSS, with win/draw logic, colored win highlights, and click SFX.</p>
-          <ul>
-            <li><strong>How to play:</strong> Pick a square to place your token; first to 3-in-a-row wins. If the board fills with no line, it’s a draw.</li>
-            <li><strong>What’s next:</strong> Scoreboard, keyboard play (arrow keys + Enter), improved tokens, tiny win modal.</li>
-            <li><strong>Tech:</strong> Vite, React, SCSS, responsive images (WebP/AVIF), SFX with <code>Audio</code> + refs.</li>
-          </ul>
-        </div>
-      </details>
+        <ul className="about__tags" aria-label="Core tools and focus areas">
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>SCSS</li>
+          <li>UI polish</li>
+          <li>Accessibility</li>
+        </ul>
 
-      {/* Add more games here as you build them */}
-      <details>
-        <summary><strong>Future Game Slot</strong> — coming soon</summary>
-        <div style={{ padding: '0.75rem 1rem' }}>
-          <p>Placeholder for the next cryptid mini-game. Watch this space!</p>
-        </div>
-      </details>
+        <p>As the site grows, I’ll be expanding into more full-stack features (blog tooling, content workflows, and backend experimentation) while keeping performance and clarity front and center.</p>
+      </section>
 
       <section id="me" className="about__me">
         <h2>About Me</h2>
-        <p>I’m Andrew—web dev, game tinkerer, and cryptid enjoyer. Cryptid Quest is my playground for building fun experiences while sharpening my React, SCSS, and UI polish. 
-        <a href="/about-me"> Learn more →</a></p>
+        <p>I’m Andrew—web dev, game tinkerer, crypted enjoyer, and music lover. If you want a developer who keeps shipping and improving, you can reach me here:</p>
+
+        <div className="about__cta">
+          {/* <a className="about__button" href="/about-me">Learn more</a> */}
+          {/* <a className="about__button about__button--secondary" href="/contact">Contact</a> */}
+          {/* Optional later: GitHub / Resume */}
+          {/* <a className="about__button about__button--secondary" href="https://github.com/yourname">GitHub</a> */}
+        </div>
       </section> 
+
       <footer className="footer">
         <a href="#top" aria-label="Back to top">↑ Back to top</a>
       </footer>

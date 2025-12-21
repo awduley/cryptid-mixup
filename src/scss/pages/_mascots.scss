@@ -64,6 +64,11 @@
     }
   }
 
+  &__card-header,
+  &__card-image-wrapper {
+    cursor: pointer;
+  }
+
   &__card-header {
     min-height: 8rem;
     margin-bottom: 1rem;

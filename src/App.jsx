@@ -1,20 +1,20 @@
 import { useState } from 'react';
-import { Routes, Route, NavLink, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './layout/Header.jsx';
 import Footer from './layout/Footer.jsx';
 
-import Home from './pages/index.jsx'; 
+import Home from './pages'; 
 import About from './pages/About.jsx';
 import Blog from './pages/Blog.jsx';
 import NotFound from './pages/NotFound.jsx';
 
-import Mascots from './pages/Mascots.jsx';
-import MascotsDetailsPage from './pages/MascotsDetailPage.jsx';
+import TheCrew from './pages/TheCrew.jsx';
+import TheCrewDetailsPage from './pages/TheCrewDetailsPage.jsx';
 
-import CryptidMixup from './games/cryptid-mixup/CryptidMixup.jsx';
-import CryptacToe from './games/cryptac-toe/CryptacToe.jsx';
-import DypetsBrikker from './games/dypets-brikker/DypetsBrikker.jsx';
+import CryptidMixup from './the-crypt/cryptid-mixup/CryptidMixup.jsx';
+import CryptacToe from './the-crypt/cryptac-toe/CryptacToe.jsx';
+import DypetsBrikker from './the-crypt/dypets-brikker/DypetsBrikker.jsx';
 
 
 export default function App() {
@@ -27,11 +27,11 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/team" element={<Mascots />} />
-          <Route path="/team/:slug" element={<MascotsDetailsPage />} />
-          <Route path="/games/cryptid-mixup" element={<CryptidMixup />} />
-          <Route path="/games/cryptac-toe" element={<CryptacToe />} />
-          <Route path="/games/dypets-brikker" element={<DypetsBrikker />} />
+          <Route path="/the-crew" element={<TheCrew />} />
+          <Route path="/the-crew/:slug" element={<TheCrewDetailsPage />} />
+          <Route path="/the-crypt/cryptid-mixup" element={<CryptidMixup />} />
+          <Route path="/the-crypt/cryptac-toe" element={<CryptacToe />} />
+          <Route path="/the-crypt/dypets-brikker" element={<DypetsBrikker />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

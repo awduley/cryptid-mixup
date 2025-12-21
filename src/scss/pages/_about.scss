@@ -9,29 +9,22 @@
     margin-block-end: 2rem;
   }
 
+  p {
+    margin-block: 1rem;
+  }
+
   h1, 
   h2 {
-    margin-block-end: 2rem;
+    margin-block: 3rem 2rem;
   }
 
-  details {
-    margin-block: 1rem 2rem;
-
-    div {
-      margin-block: 2rem;
-    }
-
-    p,
-    ul,
-    ul li {
-      margin-block: 1rem;
-    }
-    
-    p {
-      line-height: 1.5rem;
-    }
+  p,
+  ul,
+  ul li {
+    margin-block: 1rem;
   }
 
+  
   footer {
     margin-block: 2rem;
   }

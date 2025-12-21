@@ -53,7 +53,8 @@ function Header() {
           </picture></a>
           <div className="hero__title-tag">
             <h1><a href="/" className="hero__title">Cryptid Quest</a></h1>
-            <h3 className="hero__tagline">Welcome to the Northern Fringe!</h3>
+            <h3 className="hero__tagline">Welcome to the Northern Fringe—Where the Woods Watch Back...</h3>
+            <p><small><em>A living portfolio</em> of polished React + UI craft.</small></p>
           </div>
         </div>
         <nav className="hero__nav" aria-label="Main">
@@ -61,10 +62,10 @@ function Header() {
             <NavLink to="/" end>Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/blog">Blog</NavLink>
-            <li><a href="/contact">Contact</a></li>
-            <NavLink to="/team">The Team</NavLink>
-            <li><a href="/crypt">The Crypt</a></li>
-            <li><a href="/submit-cta" className="dead">Submit a Sighting</a></li>
+            {/* <li><a href="/contact">Contact</a></li> */}
+            <NavLink to="/the-crew">The Crew</NavLink>
+            <NavLink to="/the-crypt">The Crypt</NavLink>
+            {/* <li><a href="/submit-cta" className="dead">Submit a Sighting</a></li> */}
           </ul>
         </nav>
       </section>

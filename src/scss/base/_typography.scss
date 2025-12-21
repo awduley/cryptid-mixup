@@ -102,6 +102,11 @@ a:active {
   text-decoration-color: currentColor;
 }
 
+em,
+i {
+  font-style: italic;
+}
+
 @media (prefers-reduced-motion: reduce) {
   a {
     transition: none; 

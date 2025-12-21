@@ -48,3 +48,17 @@ body {
 .clear {
 	clear: both;       
 }  
+
+
+// A11y helper (if you don’t already have one globally)
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

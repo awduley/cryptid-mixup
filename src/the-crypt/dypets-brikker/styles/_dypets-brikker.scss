@@ -56,6 +56,137 @@
       outline-offset: -3px;
       box-shadow: 0 0 1.2rem rgba(251, 191, 36, .7);
     }
+
+    &hover .db__piece {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    // Selected glow (around the coin, not the square)
+    &--selected .db__piece {
+      box-shadow:
+        inset 0 2px 3px rgba(255, 255, 255, 0.25),
+        inset 0 -.4rem .6rem rgba(0, 0, 0, 0.35),
+        0 3px .6rem rgba(0, 0, 0, 0.35),
+        0 0 0 3px rgba(120, 200, 255, 0.45);
+    }
+  } 
+
+  &__piece {
+    display: grid;
+    place-items: center;
+    width: 78%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(0);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    overflow: hidden;
+    transition: transform 120ms ease, filter 120ms ease;
+
+    // “coin” feel: rim + depth
+    box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 0.28),
+    inset 0 -.6rem 1rem rgba(0, 0, 0, 0.45),
+    0 3px 1rem rgba(0, 0, 0, 0.45);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 6%;
+      border-radius: 50%;
+      pointer-events: none;
+
+      /* metallic sheen band */
+      background:
+        conic-gradient(
+          from 210deg,
+          rgba(255,255,255,0.00),
+          rgba(255,255,255,0.20),
+          rgba(255,255,255,0.00) 28%,
+          rgba(0,0,0,0.25) 52%,
+          rgba(255,255,255,0.10) 72%,
+          rgba(255,255,255,0.00)
+        );
+      mix-blend-mode: overlay;
+      opacity: 0.8;
+    }
+  }
+
+  // Kraken coin
+  .db__piece--kraken {
+    color: rgba(140, 255, 245, 0.75);
+
+    background:
+      /* cold highlight */
+      radial-gradient(circle at 30% 25%, rgba(255,255,255,0.22), rgba(255,255,255,0) 45%),
+      /* teal abyss glow (subtle) */
+      radial-gradient(circle at 55% 65%, rgba(40, 200, 190, 0.14), rgba(0,0,0,0) 55%),
+      /* gunmetal base */
+      radial-gradient(circle at 50% 45%, #2a3238, #141a1f 65%, #080b0d 100%);
+    border: 2px solid rgba(255,255,255,0.12);
+  }
+
+  // Lyngbakr coin
+  .db__piece--lyngbakr {
+    background:
+    /* bright rim highlight */
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.55), rgba(255,255,255,0) 45%),
+    /* cool sea tint in recess */
+    radial-gradient(circle at 55% 60%, rgba(120, 220, 230, 0.18), rgba(0,0,0,0) 55%),
+    /* silver base */
+    radial-gradient(circle at 50% 45%, #d9e3ea, #7f8c96 62%, #3e4a53 100%);
+    border: 2px solid rgba(255,255,255,0.22);
+    color: rgba(210, 255, 240, 0.85); // emblem color
+  }
+
+  // KING: stack behind + inner ring
+  .db__piece--king::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    transform: translate(5px, 5px);
+    z-index: 0;
+
+    // “back coin” is darker + simpler
+    background:
+      radial-gradient(circle at 40% 35%, rgba(255,255,255,0.10), rgba(255,255,255,0) 45%),
+      radial-gradient(circle at 50% 50%, rgba(0,0,0,0.55), rgba(0,0,0,0) 60%),
+      radial-gradient(circle at 50% 50%, rgba(0,0,0,0.55), rgba(0,0,0,0.0) 65%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.45);
+  }
+
+  .db__piece--king::after {
+    content: "";
+    position: absolute;
+    inset: 16%;
+    border-radius: 50%;
+    z-index: 3;
+    border: 2px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.18),
+      inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(255,255,255,0.28);
+  }
+
+  .db__emblem {
+    width: 62%;
+    height: 62%;
+    position: relative;
+    z-index: 2;
+
+    /* emboss effect */
+    filter:
+      drop-shadow(-1px -1px 0 rgba(255,255,255,0.18))
+      drop-shadow( 1px  1px 0 rgba(0,0,0,0.45));
+  }
+
+  &__emblem path {
+    stroke: currentColor;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   // Light squares – cold cyan metal

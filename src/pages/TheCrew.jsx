@@ -4,11 +4,11 @@ import { mascots } from '../data/mascots';
 
 import MascotImage from '../components/MascotImage';
 
-export default function Mascots() {
+export default function TheCrew() {
   return(
     <main className="mascots">
       <header className="mascots__header">
-        <h1>The Cryptid Quest Team</h1>
+        <h1>The Cryptid Quest Crew</h1>
         <p>Meet the faces of Cryptid Quest — guardians, legends, and well, let's just say...oddities of the wild.</p>
       </header>
 
@@ -16,7 +16,7 @@ export default function Mascots() {
         {mascots.map(mascot => (
           <Link 
             key={mascot.slug}
-            to={`/team/${mascot.slug}`}
+            to={`/the-crew/${mascot.slug}`}
             className="mascots__card"
           >
             <div className="mascots__card-header">

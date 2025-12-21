@@ -11,6 +11,7 @@ CENTRAL REGION — CRYPTID QUEST WOODS
 • Dense evergreen forests; moss-covered paths; hidden groves.
 • Home base of the band and most mascots.
 • Contains lake clearings, woodland rivers, and ancient ruins.
+• The Woods lie in the long shadow of Undergang Fjell to the west.
 
 Key Locations:
 - Band’s rehearsal clearing
@@ -18,6 +19,7 @@ Key Locations:
 - Dredsky’s shadow alcove
 - Stoneblood’s forest paths
 - Sparkplug’s workshop nook
+- Old pilgrim trail markers (faded cairns, carved posts, rune-stones)
 
 ============================================================
 NORTHERN REGION — FOGWATER COAST
@@ -26,12 +28,14 @@ NORTHERN REGION — FOGWATER COAST
 • Birthplace of ocean Selkies.
 • Rugged cliffs, driftwood beaches, and moonlit fogbanks.
 • Major rivers flow inland from here into the Woods.
+• Primary launch-point for the crew’s sailing runs and coastal trouble.
 
 Key Features:
 - Tideborne river mouths
 - Shimmerveil coves
 - Selkie gathering stones
 - Silverfog inlets
+- Storm-lantern jetties (weathered docks used by fisherfolk and drifters)
 
 ============================================================
 EASTERN REGION — TIMBERFELL BASIN
@@ -41,30 +45,52 @@ EASTERN REGION — TIMBERFELL BASIN
 • Sparkplug’s homeland.
 
 Subregion:
-  • Ironbark Burrows  
+  • Ironbark Burrows
     - A maze-like system of underground homes inhabited by
       the Ironbark Sable clans (Sparkplug’s people).
 
 ============================================================
+WESTERN REGION — UNDERGANG FJELL
+============================================================
+• A towering mountain mass rising beyond the western treeline.
+• Public/common name: Undergang Fjell
+• Local/old-tongue rendering: Undergangsfjell (rarely written in full)
+• Weather shifts fast here—bright one moment, slate-dark the next.
+• The mountain is infamous for swallowing sound: wind dies, birds go quiet,
+  and even footsteps feel muted on certain slopes.
+
+Identity & Vibe:
+- Not “demonic” — just old, heavy, and strangely watchful.
+- Ominous grandeur: big skies, hard rock, long shadows, sudden fog walls.
+- Feels like the world is holding its breath.
+
+Key Features:
+- The Shadow Face (the side visible from the Woods at dusk)
+- Scree-Fields of Silence (loose stone slopes where sound seems to vanish)
+- The Split Pass (a narrow saddle used for crossings and pilgrimages)
+- Glacier-fed rills that feed the Woods’ rivers
+- Windworn pillars (natural stone stacks that resemble ancient markers)
+
+Band / Crew Hooks:
+- Pilgrimage routes occasionally lead toward the Split Pass.
+- The crew doesn’t “live” on the mountain—Undergang Fjell is a destination,
+  a dare, a backdrop, a test.
+- Locals joke: “Don’t translate the name unless you want it to feel real.”
+
+============================================================
 SOUTHERN REGION — (UNDEFINED YET)
-=======
+============================================================
 • Reserved for future lore.
 • Could house plains cryptids, volcanic terrain, ancient ruins,
   or southern coastal villages depending on future development.
 
 ============================================================
-WESTERN REGION — (UNDEFINED YET)
-============================================================
-• Potential home of mountain ranges, deep lakes, giant cryptids,
-  or nomadic tribes.
-
-============================================================
 ADDITIONAL FUTURE REGIONS
 ============================================================
-• Northeastern Isles  
-• Frostback Mountains  
-• Moonwake Coast (southern warm region, if ever added)  
-• Hollowshade Marshlands  
+• Northeastern Isles
+• Frostback Mountains
+• Moonwake Coast (southern warm region, if ever added)
+• Hollowshade Marshlands
 • STARFELL RIDGE (high-altitude cryptid territory)
 • Your imagination will expand these over time.
 
@@ -74,6 +100,9 @@ NOTES
 • Regions connected by river routes, forest paths, and old trade roads.
 • The Northern Fringe is intentionally large — travel between
   regions takes days or weeks.
+• The crew’s “default loop” when not recording/performing:
+  sail the Fogwater Coast, then return inland to the Woods—
+  and, when the mood turns cinematic, take the long road toward Undergang Fjell.
 • Each mascot will eventually have a role both in the band and in
   the infrastructure of the Cryptid Quest website.
 

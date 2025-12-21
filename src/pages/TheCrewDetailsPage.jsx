@@ -4,23 +4,23 @@ import { mascots } from '../data/mascots';
 
 import MascotImage from '../components/MascotImage'
 
-export default function MascotDetailPage() {
+export default function TheCrewDetailsPage() {
   const { slug } = useParams();
   const mascot = mascots.find(m => m.slug === slug);
 
   if (!mascot) {
     return (
       <main className="mascot-detail">
-        <p>Mascot not found.</p>
-        <Link to="/mascots">← Back to mascots</Link>
+        <p>Crew member not found.</p>
+        <Link to="/the-crew">← Back to the crew</Link>
       </main>
     );
   }
 
   return (
     <main className="mascot-detail">
-      <Link to="/team" className="mascot-detail__back">
-        ← Back to mascots
+      <Link to="/the-crew" className="mascot-detail__back">
+        ← Back to the crew
       </Link>
 
       <article className="mascot-detail__content">

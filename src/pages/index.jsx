@@ -3,13 +3,13 @@ import React from 'react';
 import GamesTeaser from '../sections/GamesTeaser';
 import NewestPosts from '../sections/NewestPosts';
 
-import OrbCatcher from '../games/orb-catcher';
+// import OrbCatcher from '../the-crypt/orb-catcher';
 
 export default function Home() {
   return(
     <>
-      <GamesTeaser />
       <NewestPosts />
+      <GamesTeaser />
     </>
   );
 }
