@@ -1,55 +1,26 @@
 // Abstracts
-
-// @import 'abstracts/functions';
-// @import 'abstracts/mixins';
-// @import 'abstracts/placeholders';
-// @import 'abstracts/variables';
-
-@use 'abstracts' as *;
+@use 'abstracts';
 
 // Base
-
-// @import 'base/base';
-// @import 'base/normalize';
-// @import 'base/reset';
-// @import 'base/typography';
-
-@use 'base' as *;
+@use 'base';
 
 // Components
-
-// @import 'components/buttons';
-// @import 'components/cards';
-// @import 'components/carousel';
-
-@use 'components' as *;
+@use 'components';
 
 // Layout
-
-// @import 'layout/footer';
-// @import 'layout/grid';
-// @import 'layout/header';
-// @import 'layout/navigation';
-
-@use 'layout' as *;
+@use 'layout';
 
 // Pages
+@use 'pages';
 
-// @import 'pages/about';
+// Sections
+@use 'sections';
 
-@use 'pages' as *;
+// // Themes
+// @use 'themes';
 
-// @import 'pages/';
+// Utilities
+@use 'utilities';
 
-// Themes
-
-// @import 'themes/dark';
-// @import 'themes/default';
-
-@use 'themes' as *;
-
-@use 'utilities' as *;
-
-// Vendors
-
-// @import 'venders/';
+// // Vendors
+// @use 'vendors';

@@ -28,13 +28,6 @@ body {
   }
 }
 
-#header,
-#main,
-#footer {
-  padding-block: clamp(1rem, 2vw, 2rem);
-  padding-inline: clamp(1rem, 2vw, 2rem);
-}
-
 /* Clear fix hack */
 .clearfix:after {
      content: ".";

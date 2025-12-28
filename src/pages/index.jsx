@@ -7,9 +7,9 @@ import NewestPosts from '../sections/NewestPosts';
 
 export default function Home() {
   return(
-    <>
+    <main>
       <NewestPosts />
-      <GamesTeaser />
-    </>
+      <GamesTeaser />  
+    </main>
   );
 }

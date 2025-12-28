@@ -3,17 +3,21 @@ import React from 'react';
 import GameCard from '../components/GameCard';
 import { GAMES } from '../data/games';
 
-function GamesTeaser() {
+export default function GamesTeaser() {
   return(
-    <section className="games-teaser" aria-labelledby="games-heading">
-      <h2 id="games-heading" className="games-teaser__title">Games from the Woods</h2>
-      <div className="games-teaser__grid">
-        {GAMES.map(game => (
-          <GameCard key={game.id || game.slug} game={game} />
-        ))}
+    <section className="section section--bg-light games-teaser" aria-labelledby="games-heading">
+      <div className="container">
+        <h2 id="games-heading" className="section__title">Games from the Woods</h2>
+        <p className="section__subtitle">Playable prototypes and polished minis—pick a trail and jump in</p>
+        <p className="section__dev-note">
+          <small><strong>Build note:</strong> Responsive card grid + image srcset pipeline; routing to game detail pages next</small>
+        </p>
+        <div className="games-teaser__grid">
+          {GAMES.map(game => (
+            <GameCard key={game.id || game.slug} game={game} />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-export default GamesTeaser;

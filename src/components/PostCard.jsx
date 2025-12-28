@@ -1,9 +1,9 @@
 import React from 'react';
 
-function PostCard({ post }) {
+export default function PostCard({ post }) {
   return(
-    <article className="post-card">
-      <a href={`/blog${post.slug}`} className="post-card__media">
+    <article className="post-card card">
+      <a href={`/blog/${post.slug}`} className="post-card__media media-frame media-frame--contain">
         <img 
           src={post.cover} 
           alt="" 
@@ -14,8 +14,8 @@ function PostCard({ post }) {
         />
       </a>
 
-      <section id="post-card" className="post-card__meta">
-        <span className="post-card__cat">{post.category}</span>
+      <section className="post-card__meta">
+        <span className="post-card__cat pill">{post.category}</span>
         <time dateTime={post.date}>
           {new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
         </time>
@@ -32,5 +32,3 @@ function PostCard({ post }) {
     </article>
   );
 }
-
-export default PostCard;

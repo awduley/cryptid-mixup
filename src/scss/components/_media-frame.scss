@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.media-frame {
+  display: block;
+  background: rgba($color-bg-light, .35);
+
+  /* Uses a CSS variable if set, otherwise defaults to 12rem */
+  height: var(--media-h, 12rem);
+
+  overflow: hidden;
+}
+
+/* Default: fill the frame (can crop) */
+.media-frame > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Variant: no cropping (letterbox/padding) */
+.media-frame--contain > img {
+  object-fit: contain;
+  padding: clamp(.35rem, .8vw, .75rem);
+}

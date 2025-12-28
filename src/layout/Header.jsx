@@ -46,26 +46,30 @@ function Header() {
       <div className="hero__fog hero__fog--near" aria-hidden="true"></div>
       <section className="hero__inner">
         <div className="hero__brand">
-          <a href="/"><picture className="hero__logo">
-            <source type="image/avif" srcSet="/images/branding/logo/logo-img-600.avif 1x" />
-            <source type="image/webp" srcSet="/images/branding/logo/logo-img-600.webp 1x" />
-            <img className="hero__logo-img" src="/images/branding/logo/logo-img-600.png" alt="" width="600" height="600" />                
-          </picture></a>
+
+          <NavLink to="/" className="hero__home" aria-label="Crypted Quest home">
+            <picture className="hero__logo">
+              <source type="image/avif" srcSet="/images/branding/logo/logo-img-600.avif 1x" />
+              <source type="image/webp" srcSet="/images/branding/logo/logo-img-600.webp 1x" />
+              <img className="hero__logo-img" src="/images/branding/logo/logo-img-600.png" alt="" width="600" height="600" />                
+            </picture>
+          </NavLink>
+
           <div className="hero__title-tag">
             <h1><a href="/" className="hero__title">Cryptid Quest</a></h1>
             <h3 className="hero__tagline">Welcome to the Northern Fringe—Where the Woods Watch Back...</h3>
-            <p><small><em>A living portfolio</em> of polished React + UI craft.</small></p>
+            <p className="hero__note">
+              <small><em>A living portfolio</em> of polished React + UI craft.</small>
+              </p>
           </div>
         </div>
         <nav className="hero__nav" aria-label="Main">
-          <ul className="flex-center">
-            <NavLink to="/" end>Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            {/* <li><a href="/contact">Contact</a></li> */}
-            <NavLink to="/the-crew">The Crew</NavLink>
-            <NavLink to="/the-crypt">The Crypt</NavLink>
-            {/* <li><a href="/submit-cta" className="dead">Submit a Sighting</a></li> */}
+          <ul className="hero__nav-list">
+            <li><NavLink to="/" end>Home</NavLink></li>
+            <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink to="/blog">Blog</NavLink></li>
+            <li><NavLink to="/the-crew">The Crew</NavLink></li>
+            <li><NavLink to="/the-crypt">The Crypt</NavLink></li>
           </ul>
         </nav>
       </section>

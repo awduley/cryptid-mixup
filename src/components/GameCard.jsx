@@ -7,7 +7,13 @@ const STATUS_LABEL = {
   comingSoon: 'Coming soon',
 }
 
-function GameCard({ game }) {
+function clampDifficulty(n) {
+  const v = Number(n);
+  if (!Number.isFinite(v)) return 1;
+  return Math.max(1, Math.min(3, v));
+}
+
+export default function GameCard({ game }) {
 
   const {
     slug,
@@ -19,96 +25,90 @@ function GameCard({ game }) {
     coverBase,  // optional base path for 9-image set
   } = game;
 
+  const isPlayable = status === 'playable';
+  const diff = clampDifficulty(difficulty);
+
+  const stars = '★'.repeat(diff) + '☆'.repeat(3 - diff);
+  const statusLabel = STATUS_LABEL[status] || STATUS_LABEL.comingSoon
+
   const sizes = '(max-width: 700px) 92vw, 26rem';
 
-  const isPlayable = status === 'playable';
-  const stars = '★'.repeat(Math.max(1, Math.min(3, difficulty))) +
-                '☆'.repeat(3 - Math.max(1, Math.min(3, difficulty)));
-
-  // If playable, the whole card is a link; otherwise it's a non-clickable block
-
-  const Wrapper = isPlayable ? Link : 'div';
-  const wrapperProps = isPlayable
-    ? {
-      to: `/games/${slug}`,
-      className: 'game-card__link',
-      'aria-label': `${title} — Play now`,
-    }
-    : {
-      className: 'game-card__link game-card__link--disabled',
-      'aria-disabled' : 'true', tabIndex: -1
-    }
-
   return(
-    <article className="game-card">
-      <Wrapper {...wrapperProps}>
-
-        <span className={`game-card__badge game-card__badge--${status}`}>{STATUS_LABEL[status] || 'Coming soon'}</span>
-
-        <div className="game-card__body">
-          <div className="game-card__meta">
-            <span className="game-card__difficulty" aria-label={`Difficulty ${difficulty} of 3`}>
-              {stars}
-            </span>
-          </div>
-
-          <h3 className="game-card__title">{title}</h3>
-          <p className="game-card__blurb">{blurb}</p>
-
-          <span className="game-card__cta">
-            {isPlayable ? 'Play →' : 'Coming soon'}
-          </span>
-        </div>
-        
-        <div className="game-card__media">
-          {coverBase ? (
-            <picture>
-              <source 
-                type="image/avif"
-                srcSet={`
-                  ${coverBase}-640.avif 640w,
-                  ${coverBase}-960.avif 960w,
-                  ${coverBase}-1200.avif 1200w
-                `}
-                sizes={sizes}
-              />
-              <source 
-                type="image/webp"
-                srcSet={`
-                  ${coverBase}-640.webp 640w,
-                  ${coverBase}-960.webp 960w,
-                  ${coverBase}-1200.webp 1200w
-                `}
-                sizes={sizes}
-              />
-              <img src={`${coverBase}-640.jpg`}
-                srcSet={`
-                  ${coverBase}-640.jpg 640w,
-                  ${coverBase}-960.jpg 960w,
-                  ${coverBase}-1200.jpg 1200w
-                `}
-                sizes={sizes} 
-                alt={`${title} — cover art`}
-                width="1200"
-                height="675"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          ) : (
-            <img  
-              src={cover} 
+    <article className={`game-card came-card--{$status}`}>
+      <div className="game-card__media">
+        {coverBase ? (
+          <picture>
+            <source 
+              type="image/avif"
+              srcSet={`
+                ${coverBase}-640.avif 640w,
+                ${coverBase}-960.avif 960w,
+                ${coverBase}-1200.avif 1200w
+              `}
+              sizes={sizes}
+            />
+            <source 
+              type="image/webp"
+              srcSet={`
+                ${coverBase}-640.webp 640w,
+                ${coverBase}-960.webp 960w,
+                ${coverBase}-1200.webp 1200w
+              `}
+              sizes={sizes}
+            />
+            <img src={`${coverBase}-640.jpg`}
+              srcSet={`
+                ${coverBase}-640.jpg 640w,
+                ${coverBase}-960.jpg 960w,
+                ${coverBase}-1200.jpg 1200w
+              `}
+              sizes={sizes} 
               alt={`${title} — cover art`}
-              width="800"
-              height="450"
+              width="1200"
+              height="675"
               loading="lazy"
               decoding="async"
             />
-          )}
+          </picture>
+        ) : (
+          <img  
+            src={cover} 
+            alt={`${title} — cover art`}
+            width="800"
+            height="450"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+      </div>
+
+      <div className="game-card__body">
+        <header className="game-card__top">
+          <h3 className="game-card__title">{title}</h3>
+          <span className={`game-card__status game-card__status--${status}`}>
+            {statusLabel}
+          </span>
+        </header>
+      
+      
+        <div className="game-card__meta">
+          <span className="game-card__difficulty" aria-label={`Difficulty ${diff} of 3`}>
+            {stars}
+          </span>
         </div>
-      </Wrapper>
+
+        <p className="game-card__blurb">{blurb}</p>
+          
+        {isPlayable ? (
+          <Link to={`/games/${slug}`} className="game-card__cta" aria-label={`${title} — Play now`}>
+            Play →
+          </Link>
+        ) : (
+          <span className="game-card__cta game-card__cta--disabled" aria-disabled="true">
+            Coming soon
+          </span>
+        )}
+      </div>
     </article>
   );
 }
-
-export default GameCard;
