@@ -114,6 +114,40 @@ export const mascots = [
   ]
 },
 {
+  name: "Ike Deer",
+  slug: "ike-deer",
+  tagline:
+    "If his eyes flash storm-white… the ground just agreed to behave.",
+
+  summary:
+    "Ike Deer is the band's transport, power source, and living boundary line — a fifteen-foot Guardian stag summoned by the Northern Fringe from the Still Reach of the Veiled Beyond when the land is wounded. He's quiet, grounded, and almost offensively calm in the face of chaos… right up until he decides to move. Then he becomes a bullet train made of muscle and storm, and nobody with survival instincts stands in his path. Ike can seal weak places alone, but it's slower, riskier, and leaves a rougher seal — the band's shows make the process cleaner and stronger, even as it forces him into a vulnerable, near-inert Anchor Mode while the ward is active.",
+
+  lore: [
+    `When the Northern Fringe hurts badly enough, it answers itself. A Guardian is drawn from the Still Reach of the Veiled Beyond — not built, not born, but shaped into matter by need. Ike Deer's true name is Tordenhjort, the Oathbound Stag, and even the crew uses it sparingly. Whatever the Still Reach is, it doesn't translate into memory the way the Waking World expects; Ike carries truth like instinct — purpose without a map, warnings without a diagram.`,
+
+    `Long before the band ever knew his name, Tordenhjort sealed wounds alone. It worked… but it was slow, draining, and dangerously loud in the ways that matter. Solo sealing can hold a boundary, but it leaves him Anchored too long — the state where the ward stays up, the rig hums, and Ike becomes the stillest thing in the forest. That vulnerable silence makes him a target for claim-makers from the Hollows: entities that don't just invade a place — they try to own it, starting with a name.`,
+
+    `At shows, the band's structured set and a riled-up crowd don't “create” Ike's power — they amplify it. The Fringe's ambient force floods through him faster and cleaner, letting him set a stronger perimeter with less strain and a longer-lasting seal. But Ike is famously strict about the ritual. If the ground is claimed, if the circle isn't clean, if someone tries to rush the sequence, or if the land simply refuses… he will shake his head, stomp once, and refuse to Charge. The band has learned to trust that stubbornness — because the night Ike accepts a bad setup is the night something else gets invited in.`,
+
+    `The crew has a private joke: Ike isn't “difficult,” he's “correct.” Early on, they argued with him, tried to bargain with him, even tried to reposition the stage by inches like that would fool a Guardian. Now they just watch for the tell — a half-heartbeat storm-white flicker behind his eyes. When it happens, the complaints stop, the lamps steady, and everyone suddenly remembers to take the boundary line seriously.`
+  ],
+
+  funFacts: [
+    "True Name: Tordenhjort, the Oathbound Stag.",
+    "Origin: Summoned by the Northern Fringe from the Still Reach of the Veiled Beyond.",
+    "Role: Transport, Power Source, Boundary Keeper — the crew's 'generator' and 'do not cross this line' sign.",
+    "Height: About 15 feet at the shoulder, with antlers that make him feel even larger.",
+    "Speed: Usually calm and still, but capable of frightening, clean acceleration when he chooses to move.",
+    "Eyes: Normally dark and quiet — but he gives a barely-noticeable storm-white / ice-blue flicker when the ritual conditions are perfect.",
+    "Quirk: A complete ritual perfectionist. If anything is off, he vetoes the setup with a single head shake and one decisive stomp.",
+    "The Four Vetoes: Claimed ground, broken sequence, an unclean circle, or the land itself saying 'no.'",
+    "Anchor Mode: The ward holds, the rig powers up… and Ike becomes vulnerable and nearly immobile until the seal is done.",
+    "Likes: Open stretches of trail, clean ground, quiet listening, and the exact stamp sequence (no shortcuts).",
+    "Dislikes: Claimed soil, sloppy setup, rushing the ritual, and anyone standing too close when he decides to accelerate.",
+    "Most notable fact: The band can debate a venue for ten minutes — but if Ike stomps once and refuses to Charge, the discussion is over."
+  ]
+},
+{
   name: "Jervas Ironfur",
   slug: "jervas-ironfur",
   tagline:
@@ -217,5 +251,7 @@ export const mascots = [
     "First recorded appearance: Mentioned as a 'gentle giant among the pines' in a weathered frontier journal from roughly 500 years ago, long before the Northern Fringe had a name on any map."
   ]
 },
+
+
 
 ];

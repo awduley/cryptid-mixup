@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Footer() {
 
@@ -6,6 +7,7 @@ function Footer() {
 
   return(
     <footer id="footer" className="">
+      <h2 class="sr-only">Footer</h2>
       <div className="orb orb-1"></div>
       <div className="orb orb-2"></div>
       <div className="orb orb-3"></div>
@@ -14,30 +16,34 @@ function Footer() {
       <div className="footer-columns p-lg grid">
         <section className="column-f column-f-1">
           <h3>Cryptid Quest</h3>
-          <p>Documenting the unexplained with respect and curiosity.</p>
-          <a href="#page" aria-label="Back to top">Return to Campfire &uarr;</a>
+          <p>A <em>living</em> world of games, lore, and UI craft from the Northern Fringe</p>
+          <ul>
+            <li><NavLink to="/">Home—Return to Campfire</NavLink></li>
+            <li><NavLink to="/the-crew">Meet the Crew</NavLink></li>
+            <li><NavLink to="/the-crypt">Enter the Crypt</NavLink></li>
+          </ul>
         </section>
         <section className="column-f column-f-2">
-          <h3>Quick Links</h3>
+          <h3>Camp Notes</h3>
           <ul>
-            <li><a href="#">Latest Articles</a></li>
-            <li><a href="#">Creature of the Week</a></li>
-            <li><a href="#">Tools (EMF, audio log)</a></li>
-            <li><a href="#">Privacy/Terms</a></li>
+            <li><NavLink to="/about">About the Project</NavLink></li>
+            <li><NavLink to="/contact">Contact Me</NavLink></li>
+            <li><NavLink to="/privacy-policy">Privacy Policy</NavLink></li>
+            <li><NavLink to="/accessibility">Accessibility</NavLink></li>
           </ul>
         </section>
         <section className="column-f column-f-3">
-          <h3>Participate</h3>
+          <h3>Campfire Board</h3>
           <ul>
-          <li><a href="#">Submit a Sighting</a></li>
-          <li><a href="#">How to Report</a></li>
-          <li><a href="#">Community Rules</a></li>
-          <li><a href="#">FAQ</a></li>
+            <li><NavLink to="/community-rules">Camp Rules</NavLink></li>
+            <li><NavLink to="/submit-a-sighting">Submit a Sighting</NavLink></li>
+            <li><NavLink to="/how-to-report">How to Report</NavLink></li>
+            <li><NavLink to="/faq">FAQ</NavLink></li>
           </ul>
         </section>
       </div> 
       <section className="copy p-xl">
-        <small>&copy; {year} <strong>Cryptid Quest</strong>. All rights reserved.</small>
+        <small>&copy; 2025-{year} <strong>Cryptid Quest</strong>. All rights reserved.</small>
       </section>
     </footer>
   );

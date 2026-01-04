@@ -90,7 +90,6 @@ export default function GameCard({ game }) {
           </span>
         </header>
       
-      
         <div className="game-card__meta">
           <span className="game-card__difficulty" aria-label={`Difficulty ${diff} of 3`}>
             {stars}
@@ -100,7 +99,7 @@ export default function GameCard({ game }) {
         <p className="game-card__blurb">{blurb}</p>
           
         {isPlayable ? (
-          <Link to={`/games/${slug}`} className="game-card__cta" aria-label={`${title} — Play now`}>
+          <Link to={`/the-crypt/${slug}`} className="game-card__cta" aria-label={`${title} — Play now`}>
             Play →
           </Link>
         ) : (

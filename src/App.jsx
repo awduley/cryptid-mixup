@@ -6,6 +6,7 @@ import Footer from './layout/Footer.jsx';
 
 import Home from './pages'; 
 import About from './pages/About.jsx';
+import Accessibility from './pages/Accessibility.jsx';
 import Blog from './pages/Blog.jsx';
 import NotFound from './pages/NotFound.jsx';
 
@@ -26,6 +27,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/the-crew" element={<TheCrew />} />
           <Route path="/the-crew/:slug" element={<TheCrewDetailsPage />} />

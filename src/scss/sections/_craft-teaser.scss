@@ -1,0 +1,173 @@
+@use '../abstracts' as *;
+
+.craft-teaser {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: clamp(1rem, 2.6vw, 1.8rem);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    --glow: #4cc3ff;
+
+    position: relative;
+    border-radius: 18px;
+    padding: 1.1rem 1rem 1rem;
+    min-height: 12.5rem;
+    overflow: hidden;
+    isolation: isolate;
+
+    display: grid;
+    align-content: space-between;
+    gap: 1rem;
+
+    // Stone slab base
+    background:
+      radial-gradient(120% 90% at 30% 18%, rgba(255,255,255,.10), transparent 55%),
+      radial-gradient(110% 90% at 80% 80%, rgba(0,0,0,.45), transparent 60%),
+      linear-gradient(145deg, #3b4048, #242830);
+
+    box-shadow:
+      0 18px 40px rgba(0,0,0,.45),
+      inset 0 1px 0 rgba(255,255,255,.08),
+      inset 0 -18px 30px rgba(0,0,0,.35);
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+
+  // Subtle “cracks / grain”
+  &__item::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background:
+      repeating-linear-gradient(
+        118deg,
+        rgba(255,255,255,.06) 0 2px,
+        transparent 2px 18px
+      );
+    opacity: .10;
+    transform: rotate(-8deg);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  // Glow wash near the top
+  &__item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 26%,
+      color-mix(in srgb, var(--glow) 55%, transparent) 0 44%,
+      transparent 68%
+    );
+    opacity: .45;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__sigil {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: .2rem;
+  }
+
+  // Big faint symbol behind the word
+  &__glyph {
+    display: block;
+    font-size: 4.2rem;
+    line-height: 1;
+    opacity: .22;
+    color: color-mix(in srgb, var(--glow) 70%, white);
+    filter:
+      drop-shadow(0 0 10px var(--glow))
+      drop-shadow(0 0 22px color-mix(in srgb, var(--glow) 60%, transparent));
+    transform: translateY(.2rem);
+    pointer-events: none;
+  }
+
+  // The “glowing rune word” (English, but magical)
+  &__rune-word {
+    display: inline-block;
+    margin-top: -.65rem;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 800;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+
+    color: color-mix(in srgb, var(--glow) 82%, white);
+    text-shadow:
+      0 0 8px var(--glow),
+      0 0 18px var(--glow),
+      0 0 36px color-mix(in srgb, var(--glow) 55%, transparent);
+  }
+
+  // “Etched” plaque text at the bottom
+ &__etch {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+  letter-spacing: .04em;
+  font-size: 1.35rem;
+
+  // brighter “chalky carve”
+  color: rgba(235, 238, 245, .55);
+
+  // crisp engraving illusion
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.65),     // dark lip below
+    0 -1px 0 rgba(255,255,255,.18), // highlight above
+    0 0 10px rgba(0,0,0,.25);    // soft separation
+}
+
+
+  // Optional: carved divider groove
+  &__etch::before {
+    content: "";
+    display: block;
+    width: min(12rem, 85%);
+    height: 1px;
+    margin: 0 auto .65rem;
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(0,0,0,.45),
+      rgba(255,255,255,.08),
+      rgba(0,0,0,.45),
+      transparent
+    );
+    opacity: .55;
+  }
+
+  &__item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,.12);
+    box-shadow:
+      0 22px 50px rgba(0,0,0,.52),
+      0 0 24px rgba(0,0,0,.12),
+      inset 0 1px 0 rgba(255,255,255,.10),
+      inset 0 -18px 30px rgba(0,0,0,.35);
+  }
+
+  // Your grid breakpoint preferences
+  @media (min-width: $bp-md) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: $bp-lg) {
+    &__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}
