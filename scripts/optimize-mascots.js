@@ -8,7 +8,7 @@ import sharp from 'sharp';
 const ROOT_DIR = process.cwd();
 
 // Where your mascot folders live
-const MASCOTS_DIR = path.join(ROOT_DIR, 'public', 'images', 'mascots');
+const CREW_MEMBERS_DIR = path.join(ROOT_DIR, 'public', 'images', 'crew-members');
 
 // These are the widths we'll generate for each mascot image
 // e.g. bif-goot-400x600.*, bif-goot-800x1200.*, bif-goot-1024x1536.*
@@ -25,29 +25,29 @@ function isMasterFile(fileName, slug) {
 }
 
 // Process a single mascot folder, e.g. /public/images/mascots/bif-goot
-async function processMascotFolder(slug) {
-  const mascotDir = path.join(MASCOTS_DIR, slug);
+async function processCrewMembersFolder(slug) {
+  const crewMembersDir = path.join(CREW_MEMBERS_DIR, slug);
 
-  if (!fs.existsSync(mascotDir)) {
-    console.warn(`⚠️  Mascot folder not found: ${mascotDir}`);
+  if (!fs.existsSync(crewMembersDir)) {
+    console.warn(`⚠️  crew-members folder not found: ${crewMembersDir}`);
     return;
   }
 
-  const files = fs.readdirSync(mascotDir);
+  const files = fs.readdirSync(crewMembersDir);
   const masterFile = files.find((file) => isMasterFile(file, slug));
 
   if (!masterFile) {
-    console.warn(`⚠️  No master file found for slug "${slug}" in ${mascotDir}`);
+    console.warn(`⚠️  No master file found for slug "${slug}" in ${crewMembersDir}`);
     console.warn(`    Expected something like: ${slug}-master.png or .jpg`);
     return;
   }
 
-  const masterPath = path.join(mascotDir, masterFile);
-  console.log(`\n🎨 Processing mascot "${slug}" from master: ${masterFile}`);
+  const masterPath = path.join(crewMembersDir, masterFile);
+  console.log(`\n🎨 Processing crew member "${slug}" from master: ${masterFile}`);
 
   for (const width of TARGET_WIDTHS) {
     const baseOutName = `${slug}-${width}`;
-    const baseOutPath = path.join(mascotDir, baseOutName);
+    const baseOutPath = path.join(crewMembersDir, baseOutName);
 
     console.log(`  → Generating ${baseOutName}.{avif,webp,jpg}`);
 
@@ -83,30 +83,30 @@ async function main() {
   // node scripts/optimize-mascots.js bif-goot
   const [, , slugArg] = process.argv;
 
-  if (!fs.existsSync(MASCOTS_DIR)) {
-    console.error(`❌ Mascots directory not found: ${MASCOTS_DIR}`);
+  if (!fs.existsSync(CREW_MEMBERS_DIR)) {
+    console.error(`❌ crew-members directory not found: ${CREW_MEMBERS_DIR}`);
     process.exit(1);
   }
 
   if (slugArg) {
     // Only process a single mascot if slug is passed
-    await processMascotFolder(slugArg);
+    await processCrewMembersFolder(slugArg);
   } else {
     // No slug → process every folder in /public/images/mascots
     const mascotSlugs = fs
-      .readdirSync(MASCOTS_DIR)
+      .readdirSync(CREW_MEMBERS_DIR)
       .filter((name) => {
-        const fullPath = path.join(MASCOTS_DIR, name);
+        const fullPath = path.join(CREW_MEMBERS_DIR, name);
         return fs.statSync(fullPath).isDirectory();
       });
 
-    if (mascotSlugs.length === 0) {
-      console.warn('⚠️  No mascot folders found under:', MASCOTS_DIR);
+    if (crewMembersSlugs.length === 0) {
+      console.warn('⚠️  No crew-member folders found under:', CREW_MEMBERS_DIR);
       return;
     }
 
-    for (const slug of mascotSlugs) {
-      await processMascotFolder(slug);
+    for (const slug of Slugs) {
+      await processCrewMembersFolder(slug);
     }
   }
 
@@ -114,6 +114,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error('❌ Error in optimize-mascots script:', err);
+  console.error('❌ Error in optimize-crew-member script:', err);
   process.exit(1);
 });

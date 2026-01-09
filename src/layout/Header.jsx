@@ -56,7 +56,7 @@ function Header() {
           </NavLink>
 
           <div className="hero__title-tag">
-            <h1><a href="/" className="hero__title">Cryptid Quest</a></h1>
+            <h1><NavLink to="/" className="hero__title">Cryptid Quest</NavLink></h1>
             <h3 className="hero__tagline">Welcome to the Northern Fringe—Where the Woods Watch Back...</h3>
             <p className="hero__note">
               <small><em>A living portfolio</em> of polished React + UI craft.</small>

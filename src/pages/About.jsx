@@ -52,7 +52,9 @@ export default function About() {
         </section> 
 
         <footer className="section">
-          <a href="#top" aria-label="Back to top">↑ Back to top</a>
+          <a href="#top">&uarr; Back to top</a>
+          <span aria-hidden="true"> | </span>
+          <Link to="/">&larr; Back to home</Link>
         </footer>
       </div>
     </main>

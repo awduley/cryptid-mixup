@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function MascotImage({
+export default function CrewMemberImage({
   slug, 
   alt,
   size = 800,
@@ -8,7 +8,7 @@ export default function MascotImage({
   loading = 'lazy',
 }) {
   // Example: /images/mascots/bif-goot/bif-goot-800
-  const basePath = `/images/mascots/${slug}/${slug}-${size}`;
+  const basePath = `/images/crew-members/${slug}/${slug}-${size}`;
 
   return (
     <picture>

@@ -7,7 +7,7 @@ function Footer() {
 
   return(
     <footer id="footer" className="">
-      <h2 class="sr-only">Footer</h2>
+      <h2 className="sr-only">Footer</h2>
       <div className="orb orb-1"></div>
       <div className="orb orb-2"></div>
       <div className="orb orb-3"></div>
@@ -27,7 +27,7 @@ function Footer() {
           <h3>Camp Notes</h3>
           <ul>
             <li><NavLink to="/about">About the Project</NavLink></li>
-            <li><NavLink to="/contact">Contact Me</NavLink></li>
+            <li><NavLink to="/contact">Contact Us</NavLink></li>
             <li><NavLink to="/privacy-policy">Privacy Policy</NavLink></li>
             <li><NavLink to="/accessibility">Accessibility</NavLink></li>
           </ul>

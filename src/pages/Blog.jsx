@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import '../the-crypt/shared/styles/index.scss'; 
+import '../games/shared/styles/index.scss'; 
 import '../scss/pages/_blog.scss';    
 
 export default function Blog() {
