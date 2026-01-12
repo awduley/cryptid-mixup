@@ -1,10 +1,34 @@
+import { useState, useEffect } from 'react';
+
 import PostCard from '../components/PostCard';
 import { POSTS } from '../data/posts';
 
-function NewestPosts() {
-  const newest = [...POSTS]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 6);
+export default function NewestPosts() {
+  // const newest = [...POSTS]
+  //   .sort((a, b) => new Date(b.date) - new Date(a.date))
+  //   .slice(0, 6);
+
+  const [newestPosts, setNewestPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("http://localhost:3001/posts")
+      .then(res => res.json())
+      .then(data => {
+        setNewestPosts([data]);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        setError("An error has occured")
+        console.log("Error fetching data:", error);
+      });
+    // .sort((a, b) => new Date(b.date) - new Date(a.date))
+    // .slice(0, 6);
+
+    console.log(newestPosts)
+  }, []);
 
   return(
     <section id="newest-posts" className="section section--bg-dark posts" aria-labelledby="latest-heading">
@@ -16,13 +40,13 @@ function NewestPosts() {
         </p>
 
         {
-          newest.length > 0 ? 
+          newestPosts.length > 0 ? 
           <div className="posts__grid">
             <div className="featured-post">
-              <PostCard post={newest[0]} />
+              <PostCard post={newestPosts[0]} />
             </div>
             <div className="secondary-posts">
-              {newest.slice(1, 3).map(p => (
+              {newestPosts.slice(1, 3).map(p => (
                 <PostCard key={p.id} post={p} />
               ))}
             </div>
@@ -36,5 +60,3 @@ function NewestPosts() {
     </section>
   );
 }
-
-export default NewestPosts;

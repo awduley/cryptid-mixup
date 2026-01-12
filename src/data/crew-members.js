@@ -47,14 +47,14 @@ export const CREW_MEMBERS = [
     ],
     funFacts: [
       "Species: Nocturne Gargoyle (Aerial Surveillance).",
-      "Height: 6'3\" standing… but feels 10 feet tall when she/s judging you in silence.",
+      "Height: 6' 13\" standing… yep she's tall.",
       "Likes: High perches, cold wind, moonlit patrols, stillness, stonework, watching the treeline breathe.",
       "Dislikes: Daylight interruptions, loud bragging, unnecessary talking, cluttered rooftops, anyone who touches her wings.",
       "Temper Level: Quiet — ranges from \"unmoved\" to \"the room suddenly feels colder.\"",
       "Notable Skill: Eagle-level vision and stone-sense—she can read vibrations through rock like a message.",
       "Notable Connection: Communicates with Jervas via stone-tap signals; Grumbit/s decoder translates it into pulses in Jervas'/ bracer.",
       "Fun Failure: Once froze so perfectly in “statue sleep” that the crew tried to hang a lantern on her.",
-      "Catchphrase: (She doesn/t really have one. If she speaks, it/s usually a single word—delivered like a verdict.)",
+      "Catchphrase: (She doesn't really have one. If she speaks, it's usually a single word—delivered like a verdict.)",
     ],
   },
   {
