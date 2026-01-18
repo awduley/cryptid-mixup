@@ -9,6 +9,7 @@ lerna-debug.log*
 
 # Dependencies / builds
 node_modules
+**/node_modules/
 dist
 dist-ssr
 
@@ -28,6 +29,8 @@ Thumbs.db
 # Env files (don’t commit secrets)
 .env
 .env.*
+**/.env
+**/.env.*
 !.env.example        # keep a sample env file in repo
 
 # Test & tooling caches (optional but nice)
@@ -43,3 +46,6 @@ coverage/
 cypress/videos/
 cypress/screenshots/
 playwright-report/
+
+# Notes on the band and the crew
+crew-notes/
