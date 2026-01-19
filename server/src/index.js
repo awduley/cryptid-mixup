@@ -17,10 +17,6 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-pool.query("SELECT 1 AS test;")
-  .then(r => console.log("DB ok:", r.rows[0]))
-  .catch(err => console.error("DB error:", err));
-
 // Health check
 app.get("/health", (req, res) => {
   res.json({ ok: true, time: new Date().toISOString() });
@@ -36,6 +32,20 @@ app.get("/posts", async (req, res) => {
   }
 });
 
+app.post("/posts",  async (req, res) => {
+  const { title, slug, body } = req.body;
+  if (
+    !title ||
+    !slug ||
+    !body
+  ) {
+    return res.status(400).json({ okay: false})
+  }
+  const result = await pool.query(`INSERT INTO posts (title, slug, body) VALUES ($1, $2, $3) RETURNING id, created_at`, [title, slug, body])
+    .then(() => res.status(201).json(result.rows[0]))
+    .catch(err => console.log("Error:", err));
+  
+});
 
 app.listen(PORT, () => {
   console.log(`API running on http://localhost:${PORT}`);
